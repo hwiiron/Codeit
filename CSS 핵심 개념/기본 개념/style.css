@@ -1,0 +1,30 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  width: 480px;
+  margin: 82px auto;
+}
+
+#hallasan {
+  color: #f56513;
+}
+
+.place {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.description {
+  background-color: #f8f8f8;
+  color: #555555;
+  padding: 16px 24px;
+  margin: 24px 0 56px;
+}
+
+p {
+  color: #919191;
+}
+
+#map {
+  width: 100%;
+  margin-bottom: 56px;
+}

@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Poppins, 'Noto Sans KR', sans-serif;
+  background: rgb(235, 235, 235);
+  margin: 0;
+}
+
+section {
+  background: #fff;
+  width: 1420px;
+  margin: 0 auto;
+}
+
+section:nth-child(odd) {
+  background-color: #f1f4fa;
+}
+
+.main-sec {
+  background: url('bg.png') no-repeat center;
+  background-size: cover;
+  padding-bottom: 280px;
+}
+
+.inner {
+  width: 720px;
+  margin: 0 auto;
+  padding-top: 72px;
+  padding: 72px 0 64px;
+}
+
+.main-sec .inner {
+  padding: 0;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  padding: 12px 40px 0;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+.main-sec p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #8287a4;
+  margin-top: 80px;
+}
+
+.main-sec h2 {
+  font-size: 56px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 12px;
+}
+
+.main-sec .inner span {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #8287a4;
+  margin-top: 14px;
+}
+
+section h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #161346;
+}
+
+section img {
+  border-radius: 24px;
+  width: 100%;
+  margin-top: 42px;
+}
+
+section p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4c497b;
+  margin-top: 32px;
+}
+
+section .btnWrap {
+  text-align: center;
+  padding-top: 32px;
+}
+
+section .btnWrap button {
+  border: 0;
+  border-radius: 8px;
+  background: #413c91;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  padding: 16px 32px;
+}
+
+section.careers-sec {
+  background-color: #161346;
+}
+
+section.careers-sec .inner {
+  text-align: center;
+  padding-top: 40px;
+}
+
+section.careers-sec h4 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+}
+
+section.careers-sec p {
+  color: #8287a4;
+  margin-top: 8px;
+}
+
+section.careers-sec .btnWrap button {
+  border-radius: 9999px;
+}
+
+section.footer-sec {
+  background-color: #120f3f;
+}
+
+section.footer-sec .inner {
+  padding: 32px 0;
+}
+
+section.footer-sec p {
+  font-weight: 400;
+  color: #d9d9d9;
+  margin-top: 0;
+}

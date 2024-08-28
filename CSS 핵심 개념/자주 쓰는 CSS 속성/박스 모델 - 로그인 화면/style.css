@@ -1,0 +1,74 @@
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form {
+  width: 360px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #4e4e4e;
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  color: #2c2c2c;
+  margin: 16px 0 8px;
+}
+
+input {
+  border: 1px solid #d1d1d1;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 16px 24px;
+  margin: 8px 0;
+}
+
+input::placeholder {
+  color: #ababab;
+}
+
+.forget {
+  text-align: right;
+}
+
+.forget a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ababab;
+}
+
+button {
+  border: none;
+  background-color: #2c2c2c;
+  display: block;
+  width: 100%;
+  color: #fff;
+  padding: 16px;
+  margin: 24px 0;
+}
+
+.accession {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ababab;
+  text-align: center;
+}
+
+.accession a {
+  color: #2c2c2c;
+}
