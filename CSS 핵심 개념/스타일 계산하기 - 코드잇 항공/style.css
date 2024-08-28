@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #f8f8f8;
+}
+
+.inner {
+  width: 640px;
+  margin: 0 auto;
+}
+
+header {
+  background: #11172b;
+}
+
+header .inner {
+  padding: 12px 0;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+}
+
+header .logo img {
+  height: 24px;
+  margin-right: 8px;
+}
+
+header .logo span {
+  font-weight: 300;
+}
+
+.container {
+  width: 640px;
+  padding: 40px 0;
+  margin: 0 auto;
+}
+
+.departure {
+  border-radius: 8px;
+  background: #ebeff8;
+  padding: 24px 32px;
+}
+
+.departure .title {
+  font-size: 16px;
+  color: #b3bdd5;
+}
+
+.departure .title img {
+  height: 12px;
+  margin-right: 4px;
+}
+
+.departure h2 {
+  font-family: Titillium Web;
+  font-size: 32px;
+  color: #000;
+  margin-top: 8px;
+}
+
+.departure .date {
+  border-radius: 4px;
+  background: #fff;
+  display: inline-block;
+  padding: 8px 24px;
+  margin-top: 24px;
+}
+
+.departure > p {
+  font-size: 12px;
+  color: #b3bdd5;
+  margin-top: 16px;
+}
+
+.airTicketList {
+  border-top: 1px dashed #b6bfd3;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.airTicket {
+  background: #fff;
+  border-radius: 8px;
+}
+
+.airTicket + .airTicket {
+  margin-top: 20px;
+}
+
+.airTicket h3 {
+  border-bottom: 1px solid #dbf1ec;
+  font-family: Titillium Web;
+  font-size: 12px;
+  font-weight: 700;
+  color: #16bf97;
+  padding: 8px 24px;
+}
+
+.airTicket .ticketInfo {
+  padding: 26px 24px 24px;
+}
+
+.airTicket .ticketInfo h4 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #b3bdd5;
+}
+
+.airTicket .ticketInfo .depArr span {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a345e;
+  margin-top: 4px;
+}
+
+.airTicket .ticketInfo .depArr span img {
+  width: 18px;
+  margin: 0 10px;
+}
+
+.airTicket .ticketInfo .flights {
+  margin-top: 4px
+}
+
+.airTicket .ticketInfo .flights p {
+  font-size: 16px;
+  color: #0b1f66;
+  margin-top: 4px;
+}
+
+.airTicket .ticketInfo .linkWrap {
+  text-align: right;
+}
+
+.airTicket .ticketInfo .linkWrap a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a345e;
+  text-decoration: none;
+}
+
+.airTicket .ticketInfo .linkWrap a + a {
+  margin-left: 24px;
+}
+
+.airTicket .ticketInfo .linkWrap a.soldOut {
+  color: #dce0e8
+}
