@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>회원가입</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+   >
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form>
+      <h1 class="login-title">회원가입</h1>
+      <label for="username">아이디</label>
+      <input id="username" name="username" type="text">
+      <label for="password">비밀번호</label>
+      <input id="password" name="password" type="password">
+      <label for="password-repeat">비밀번호 확인</label>
+      <input id="password-repeat" name="password-repeat" type="password">
+      <label for="email">이메일</label>
+      <input id="email" name="email" type="email">
+      <label>성별</label>
+      <label>
+        <input name="sex" value="male" type="radio" checked>
+        남성
+      </label>
+      <label>
+        <input name="sex" value="female" type="radio">
+        여성
+      </label>
+      <label>
+        <input name="sex" value="none" type="radio">
+        밝히고 싶지 않음
+      </label>
+      <label for="birthdate">생년월일</label>
+      <input id="birthdate" name="birthdate" type="date">
+      <label for="interest">관심사</label>
+      <label>
+        <input name="interest" value="programming" type="checkbox">
+        프로그래밍
+      </label>
+      <label>
+        <input name="interest" value="sport" type="checkbox">
+        스포츠
+      </label>
+      <label>
+        <input name="interest" value="film" type="checkbox">
+        영화
+      </label>
+      <label>
+        <input name="interest" value="economy" type="checkbox">
+        경제
+      </label>
+      <label for="profession">직업</label>
+      <select name="" id="profession">
+        <option value="">학생</option>
+        <option value="">회사원</option>
+        <option value="">자영업</option>
+        <option value="">교사</option>
+        <option value="">선수</option>
+        <option value="">음악가</option>
+        <option value="">화가</option>
+      </select>
+      <label for="duration">프로그래밍 공부한 기간(년)</label>
+      <input name="duration" min="0" type="number">
+      <label for="profile">프로필 사진</label>
+      <input id="profile" name="profile" type="file">
+      <label for="introduce">소개</label>
+      <textarea id="introduce" name="introduce"></textarea>
+      <button>가입하기</button>
+    </form>
+  </body>
+</html>

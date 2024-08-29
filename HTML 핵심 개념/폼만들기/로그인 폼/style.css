@@ -1,0 +1,51 @@
+html {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form {
+  margin: 16px auto;
+  width: 360px;
+}
+
+label {
+  color: #2c2c2c;
+  display: block;
+  margin: 16px 0 8px;
+}
+
+input {
+  border: 1px solid #d1d1d1;
+  color: #ababab;
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 8px 0;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+button {
+  background: #2c2c2c;
+  border: none;
+  color: #ffffff;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 24px 0;
+  padding: 16px;
+  width: 100%;
+}
+
+.login-title {
+  color: #4e4e4e;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 24px 0;
+  text-align: center;
+}
