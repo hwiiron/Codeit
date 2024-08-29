@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>Chainit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+   >
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo"><span class="accent">CHAIN</span>IT</div>
+      <ul class="site menu">
+        <li class="active">포트폴리오</li>
+        <li>환전하기</li>
+        <li>코인 뉴스</li>
+      </ul>
+      <ul class="auth menu">
+        <li>로그인</li>
+        <li class="active">가입하기</li>
+      </ul>
+    </header>
+    <main>
+      <section class="prices">
+        <div class="detail">
+          <div class="crypto-name">
+            <img class="crypto-logo" src="images/icon_bitcoin.png" alt="네트코인 심볼">
+            네트코인
+            <span class="ticker-symbol">NTC/KRW</span>
+          </div>
+
+          <div class="current-price">
+            22,785,000<span class="change">-9.43%⬇</span>
+          </div>
+          <img
+            class="chart-image"
+            src="images/img_chart.png"
+            alt="네트코인 차트"
+         >
+          <img
+            src="images/icon_star.png"
+            alt="네트코인을 관심 코인에 추가하기"
+            class="bookmark"
+         >
+        </div>
+        <ul class="categories">
+          <li class="category active">전체 192</li>
+          <li class="category">일반 9</li>
+          <li class="category">일반 179</li>
+          <li class="category">투자유의 3</li>
+        </ul>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>가상자산</th>
+              <th>현재가(원)</th>
+              <th>변동률</th>
+              <th>시가총액</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>
+              <img
+                src="images/icon_star.png"
+                alt="관심 코인에 추가하기"
+                class="table-item-bookmark"
+             >
+            </td>
+            <td>네트코인<br><span class="ticker">NTC</span></td>
+            <td>22,785,000 원</td>
+            <td class="fall">-9.43% ⬇</td>
+            <td>432조 원</td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="images/icon_star.png"
+                alt="관심 코인에 추가하기"
+                class="table-item-bookmark"
+             >
+            </td>
+            <td>이즈리얼<br><span class="ticker">EZR</span></td>
+            <td>1,713,000 원</td>
+            <td class="rise">+10.10% ⬆</td>
+            <td>230조 원</td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="images/icon_star.png"
+                alt="관심 코인에 추가하기"
+                class="table-item-bookmark"
+             >
+            </td>
+            <td>이즈리얼 2<br><span class="ticker">EZR2</span></td>
+            <td>133.0 원</td>
+            <td class="rise">+1.43% ⬆</td>
+            <td>12조 원</td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="images/icon_star.png"
+                alt="관심 코인에 추가하기"
+                class="table-item-bookmark"
+             >
+            </td>
+            <td>네트코인 골드<br><span class="ticker">NTG</span></td>
+            <td>522.5 원</td>
+            <td class="fall">-7.43% ⬇</td>
+            <td>1320억 원</td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="images/icon_star.png"
+                alt="관심 코인에 추가하기"
+                class="table-item-bookmark"
+             >
+            </td>
+            <td>코드코인<br><span class="ticker">CDC</span></td>
+            <td>458.2 원</td>
+            <td class="fall">-9.43% ⬇</td>
+            <td>120억 원</td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="assets">
+        <p class="login-message">
+          자산을 확인하려면<br>
+          로그인해 주세요.
+        </p>
+        <a href="#" class="login">로그인</a>
+      </section>
+
+      <section class="order">
+        <div class="order-types">
+          <a href="" class="order-type active">매수</a>
+          <a href="" class="order-type">매도</a>
+        </div>
+        <div class="available">
+          <div class="label">거래가능</div>
+          <span>0 <span class="label">KRW</span></span>
+        </div>
+        <div class="price">
+          <label class="label" for="price">가격 (KRW)</label>
+          <div class="input-container">
+            <img class="icon" src="images/icon_subtract.png" alt="감소">
+            <input name="price" type="text" value="22,795,000원">
+            <img class="icon" src="images/icon_add.png" alt="추가">
+          </div>
+        </div>
+        <div class="quantity">
+          <label class="label" for="quantity">수량 (NTC)</label>
+          <div class="input-container">
+            <img class="icon" src="images/icon_subtract.png" alt="감소">
+            <input name="quantity" type="text" value="1주">
+            <img class="icon" src="images/icon_add.png" alt="증가">
+          </div>
+        </div>
+        <hr>
+        <div class="total">
+          <span class="label big">총액</span>
+
+          <div>
+            <span class="total-price">22,795,000</span>
+            <span class="label big">KRW</span>
+          </div>
+        </div>
+        <button class="order-button">매수하기</button>
+      </section>
+    </main>
+  </body>
+</html>

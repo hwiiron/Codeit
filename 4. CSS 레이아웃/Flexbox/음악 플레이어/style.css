@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Pretendard, sans-serif;
+  word-break: keep-all;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: linear-gradient(0deg, #4d4d54, #4d4d54),
+    linear-gradient(0deg, #4d4d54, #4d4d54), #4d4d54;
+}
+
+.progress {
+  width: 70%;
+  height: 100%;
+  background-color: #7000ff;
+}
+
+.player-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: rgba(48, 48, 55, 0.7);
+
+  backdrop-filter: blur(15px);
+}
+
+.info,
+.time {
+  flex-basis: 300px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.current {
+  border-radius: 14px;
+}
+
+.title {
+  color: #d9d9d9;
+}
+
+.artist {
+  color: #8c8993;
+}
+
+.playing {
+  width: 48px;
+  height: 48px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.time {
+  color: #8c8993;
+  display: flex;
+  justify-content: flex-end;
+}

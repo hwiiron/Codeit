@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Codeit Airline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Titillium+Web:wght@300;600&display=swap"
+      rel="stylesheet"
+   >
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <img id="logo" src="images/logo.png">
+      </div>
+    </div>
+    <div class="content">
+      <div class="container">
+        <div class="trip">
+          <div>
+            <div class="trip-title">
+              <img
+                class="trip-depart-icon"
+                src="images/fa-solid_plane-departure.svg"
+              >
+              출국
+            </div>
+            <div class="trip-airports">ICN → YYZ</div>
+          </div>
+
+          <span class="trip-date">일요일, 4월 20일, 2025</span>
+        </div>
+
+        <div class="flights-header">
+          <div class="flights-header-result">120개의 결과</div>
+          <div class="flights-header-price">
+            <div class="flights-header-col">
+              <div class="order-by">추천순</div>
+              <div>
+                ₩439,400<br>
+                평균 3시간 40분
+              </div>
+            </div>
+            <div class="flights-header-col active">
+              <div class="order-by">최저가</div>
+              <div>
+                ₩113,060<br>
+                평균 4시간 35분
+              </div>
+            </div>
+            <div class="flights-header-col">
+              <div class="order-by">최단 시간</div>
+              <div>
+                ₩863,200<br>
+                평균 2시간 33분
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flight-card">
+          <div class="ticket">
+            <h2 class="ticket-label">AIR TICKET 01</h2>
+            <div class="content">
+              <div class="departure-arrival">
+                <div>
+                  <h3 class="label">출발</h3>
+                  <div>오전 10:30</div>
+                </div>
+
+                <div>
+                  <h3 class="label">04h 15m</h3>
+                  <img class="flight-icon" src="images/img_journey.svg">
+                </div>
+
+                <div>
+                  <h3 class="label">도착</h3>
+                  <div>오후 2:29</div>
+                </div>
+              </div>
+              <h3 class="label">운행 항공편</h3>
+              <div>CL117, CL2402</div>
+            </div>
+          </div>
+          <div class="cabin">
+            <h3 class="name">일반</h3>
+            <p class="price">₩129,000</p>
+            <p class="left">100석 남음</p>
+            <button class="reserve">예약하기</button>
+          </div>
+          <div class="cabin soldout">
+            <h3 class="name">비즈니스</h3>
+            <p class="price">₩419,000</p>
+            <p class="left">0석 남음</p>
+            <button class="reserve" disabled>매진</button>
+          </div>
+          <div class="cabin soldout-soon">
+            <h3 class="name">퍼스트</h3>
+            <p class="price">₩699,000</p>
+            <p class="left">1석 남음</p>
+            <button class="reserve">예약하기</button>
+          </div>
+        </div>
+
+        <div class="flight-card">
+          <div class="ticket">
+            <h2 class="ticket-label">AIR TICKET 02</h2>
+            <div class="content">
+              <div class="departure-arrival">
+                <div>
+                  <h3 class="label">출발</h3>
+                  <div>오전 11:30</div>
+                </div>
+
+                <div>
+                  <h3 class="label">04h 15m</h3>
+                  <img class="flight-icon" src="images/img_journey.svg">
+                </div>
+
+                <div>
+                  <h3 class="label">도착</h3>
+                  <div>오후 3:29</div>
+                </div>
+              </div>
+              <h3 class="label">운행 항공편</h3>
+              <div>CL118, CL2403</div>
+            </div>
+          </div>
+          <div class="cabin">
+            <h3 class="name">일반</h3>
+            <p class="price">₩129,000</p>
+            <p class="left">42석 남음</p>
+            <button class="reserve">예약하기</button>
+          </div>
+          <div class="cabin soldout">
+            <h3 class="name">비즈니스</h3>
+            <p class="price">₩419,000</p>
+            <p class="left">0석 남음</p>
+            <button class="reserve" disabled>매진</button>
+          </div>
+          <div class="cabin soldout">
+            <h3 class="name">퍼스트</h3>
+            <p class="price">₩699,000</p>
+            <p class="left">0석 남음</p>
+            <button class="reserve" disabled>매진</button>
+          </div>
+        </div>
+
+        <div class="ad">
+          <h3>이 항공편이 마음에 드셨나요?</h3>
+          <p>항공편의 가격이 오르거나 내려가면 알려드릴게요.</p>
+          <button>알림 받기</button>
+        </div>
+
+        <div class="flight-card">
+          <div class="ticket">
+            <h2 class="ticket-label">AIR TICKET 03</h2>
+            <div class="content">
+              <div class="departure-arrival">
+                <div>
+                  <h3 class="label">출발</h3>
+                  <div>오후 12:30</div>
+                </div>
+
+                <div>
+                  <h3 class="label">04h 15m</h3>
+                  <img class="flight-icon" src="images/img_journey.svg">
+                </div>
+
+                <div>
+                  <h3 class="label">도착</h3>
+                  <div>오후 4:29</div>
+                </div>
+              </div>
+              <h3 class="label">운행 항공편</h3>
+              <div>CL119, CL2404</div>
+            </div>
+          </div>
+          <div class="cabin">
+            <h3 class="name">일반</h3>
+            <p class="price">₩129,000</p>
+            <p class="left">120석 남음</p>
+            <button class="reserve">예약하기</button>
+          </div>
+          <div class="cabin soldout">
+            <h3 class="name">비즈니스</h3>
+            <p class="price">₩419,000</p>
+            <p class="left">0석 남음</p>
+            <button class="reserve" disabled>매진</button>
+          </div>
+          <div class="cabin soldout-soon">
+            <h3 class="name">퍼스트</h3>
+            <p class="price">₩699,000</p>
+            <p class="left">1석 남음</p>
+            <button class="reserve">예약하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

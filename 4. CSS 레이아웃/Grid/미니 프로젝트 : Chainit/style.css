@@ -1,0 +1,357 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  padding: 24px;
+  max-width: 1360px;
+  width: 100%;
+  background-color: #e5e5e5;
+  color: #161346;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 500;
+  font-size: 20px;
+  font-family: Poppins, sans-serif;
+  line-height: 30px;
+}
+
+.logo .accent {
+  font-weight: 700;
+}
+
+ul.menu {
+  list-style: none;
+
+  display: flex;
+  gap: 24px;
+}
+
+ul.menu > li {
+  display: block;
+}
+
+.menu {
+  color: #717f8e;
+}
+
+.menu > .active {
+  color: #161346;
+}
+
+.site.menu {
+  flex: 1 1 auto;
+}
+
+main {
+  margin: 24px 0;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 437px;
+  gap: 24px;
+  grid-template-areas:
+  "prices assets"
+  "prices order"
+  "prices .";
+}
+
+.prices {
+  grid-area: prices;
+}
+
+section {
+  padding: 32px;
+  border-radius: 16px;
+  background-color: #ffffff;
+}
+
+.detail {
+  position: relative;
+}
+
+.crypto-name {
+  color: #161346;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+
+  display: flex;
+  align-items: center;
+}
+
+.crypto-logo {
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+}
+
+.ticker-symbol {
+  margin-left: 8px;
+  color: #787e8e;
+  font-weight: 400;
+}
+
+.current-price {
+  margin: 8px 48px 16px;
+  color: #497cff;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 58px;
+}
+
+.current-price .change {
+  margin-left: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.bookmark {
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.chart-image {
+  width: 100%;
+}
+
+ul.categories {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.category {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #f9f9fb;
+  color: #a5a5b3;
+}
+
+.category.active {
+  background-color: #161346;
+  color: #ffffff;
+}
+
+
+table.price-table {
+  margin-top: 24px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.price-table thead {
+  background: #f9f9fb;
+}
+
+table.price-table thead th {
+  padding: 14px 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+table.price-table thead th:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+table.price-table th,
+table.price-table td {
+  text-align: right;
+}
+
+table.price-table th:first-child,
+table.price-table td:first-child {
+  padding-right: 14px;
+  text-align: center;
+}
+
+table.price-table th:nth-child(2),
+table.price-table td:nth-child(2) {
+  text-align: left;
+}
+
+table.price-table thead th:last-child,
+table.price-table td:last-child {
+  padding-right: 14px;
+}
+
+table.price-table thead th:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+table.price-table td {
+  padding: 12px 0;
+}
+
+.table-item-bookmark {
+  width: 24px;
+  height: 24px;
+}
+
+.price-table .ticker {
+  color: #787e8e;
+  font-weight: 400;
+}
+
+.price-table .rise {
+  color: #e7566c;
+}
+
+.price-table .fall {
+  color: #497cff;
+}
+
+.assets {
+  min-width: 430px;
+  min-height: 300px;
+  background-color: #fff1db;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: assets;
+}
+
+.login-message {
+  text-align: center;
+  font-size: 24px;
+  line-height: 35px;
+}
+
+.login {
+  padding: 8px 32px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #161346;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 30px;
+}
+
+.order-type {
+  padding: 8px;
+  border-bottom: 2px solid #d1d1dc;
+  color: #d1d1dc;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.order-type.active {
+  border-bottom: 4px solid #e7566c;
+  color: #e7566c;
+}
+
+.order {
+  grid-area: order;
+}
+
+.order .available,
+.order .price,
+.order .quantity,
+.order .total {
+  margin: 24px 0;
+}
+
+.order .available {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order .order-types {
+  display: flex;
+}
+
+.order .total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order .order-types a {
+  flex-grow: 1;
+}
+
+.order-button {
+  display: block;
+  margin-top: 50px;
+  padding: 12px 8px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: #e7566c;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 30px;
+}
+
+.order .label {
+  color: #a5a5b3;
+}
+
+.order .label.big {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.input-container {
+  margin: 8px 0;
+  padding: 14px 24px;
+  border-radius: 8px;
+  background-color: #f9f9fb;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-container .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.input-container input {
+  border: none;
+  background-color: transparent;
+  color: #161346;
+  text-align: center;
+  font-size: 16px;
+}
+
+.order .total-price {
+  text-align: right;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35px;
+}
+
+.order hr {
+  border: 1px solid #d1d1dc;
+}
