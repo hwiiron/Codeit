@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  word-break: keep-all;
+  font-family: Pretendard, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.wrap {
+  margin: 0 auto;
+  padding: 32px;
+  max-width: 1080px;
+  width: 100%;
+}
+
+header {
+  padding: 16px;
+  background-image: linear-gradient(
+    180deg,
+    #000000 15.1%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  font-weight: 700;
+
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.info {
+  margin-bottom: 40px;
+  padding: 40px;
+  border-bottom: 1px solid #595864;
+}
+
+.cover {
+  width: 252px;
+  height: 252px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+}
+
+.cover-play-icon {
+  display: none;
+  width: 72px;
+  height: 72px;
+}
+
+.cover:hover .cover-play-icon {
+  display: block;
+}
+
+.playlist-title {
+  margin: 40px 0 16px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.hot-badge {
+  padding: 4px 8px;
+  border-radius: 8px;
+  background-color: #2a2a31;
+  color: #8e8ea0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+
+  position: relative;
+  bottom: 20px;
+}
+
+.artist {
+  color: #7d7c8a;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  gap: 8px;
+
+  display: flex;
+  align-items: center;
+}
+
+.artist-profile {
+  overflow: hidden;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.description {
+  margin: 16px 0 32px;
+  color: #7d7c8a;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.play-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4b1bb1;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.track {
+  padding: 24px 32px;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.track.active {
+  border-radius: 16px;
+  background-color: #19191f;
+}
+
+.track-title {
+  flex-grow: 1;
+}
+
+.track-info {
+  display: flex;
+  gap: 24px;
+}
+
+.track-icon {
+  width: 16px;
+  height: 16px;
+}
