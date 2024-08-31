@@ -11,6 +11,12 @@ li {
   list-style: none;
 }
 
+header,
+section,
+footer {
+  min-width: 1120px;
+}
+
 .wrapper {
   margin: 0 auto;
   background: #fff;
@@ -90,6 +96,10 @@ header .inner {
   align-items: center;
 }
 
+#content .inner .itemList li.right {
+  justify-content: flex-end;
+}
+
 #content .inner .itemList li > div {
   border-radius: 12px;
   background: #FCFCFC;
@@ -97,6 +107,10 @@ header .inner {
   display: flex;
   align-items: center;
   overflow: hidden;
+}
+
+#content .inner .itemList li.right > div {
+  justify-content: flex-end;
 }
 
 #content .inner .itemList li .text {
