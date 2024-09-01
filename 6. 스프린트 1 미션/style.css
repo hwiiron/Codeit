@@ -29,6 +29,7 @@ footer {
 }
 
 header {
+  border-bottom: 1px solid #DFDFDF;
   height: 70px;
 }
 
