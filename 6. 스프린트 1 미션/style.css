@@ -91,60 +91,56 @@ header .inner {
   margin-top: 32px;
 }
 
-#content .inner .itemList li {
-  height: 720px;
+#content .itemList {
+  width: 988px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-#content .inner .itemList li.right {
-  justify-content: flex-end;
-}
-
-#content .inner .itemList li > div {
+#content .itemList li {
   border-radius: 12px;
   background: #FCFCFC;
-  width: 960px;
+  width: 100%;
   display: flex;
   align-items: center;
   overflow: hidden;
+  margin: 138px 0;
 }
 
-#content .inner .itemList li.right > div {
+#content .itemList li.right {
   justify-content: flex-end;
 }
 
-#content .inner .itemList li .text {
-  margin-left: 83px;
+#content .itemList li .text {
+  margin-left: 64px;
 }
 
-#content .inner .itemList li .text span {
+#content .itemList li .text span {
   font-size: 18px;
   font-weight: 700;
   color: #3692FF
 }
 
-#content .inner .itemList li .text h3 {
+#content .itemList li .text h3 {
   font-size: 40px;
   font-weight: 700;
   color: #374151;
   margin-top: 12px;
 }
 
-#content .inner .itemList li .text p {
+#content .itemList li .text p {
   font-size: 24px;
   font-weight: 500;
   color: #374151;
   margin-top: 24px;
 }
 
-#content .inner .itemList li.right .text {
+#content .itemList li.right .text {
   text-align: right;
   margin: 0 64px 0 0;
-}
-
-#content .inner .itemList li:last-child .text {
-  margin-left: 22px;
 }
 
 #fandaMarket {
