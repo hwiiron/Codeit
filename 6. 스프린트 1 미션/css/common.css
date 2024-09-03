@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font: 16px / 1.4 "Noto Sans KR", sans-serif;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
