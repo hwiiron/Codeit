@@ -28,4 +28,5 @@ li {
 button {
   border: 0;
   background: 0;
+  cursor: pointer;
 }
