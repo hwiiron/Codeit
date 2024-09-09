@@ -1,0 +1,18 @@
+[data-status] {
+  padding: 5px 10px;
+}
+
+[data-status="대기중"] {
+  background-color: #FF6767;
+  color: #FFFFFF;
+}
+
+[data-status="진행중"] {
+  background-color: #5f62ff;
+  color: #FFFFFF;
+}
+
+[data-status="완료"] {
+  background-color: #07c456;
+  color: #FFFFFF;
+}
