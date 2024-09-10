@@ -2,7 +2,7 @@
 
 ### 1️⃣ 시맨틱 태그를 사용하면 좋은 점을 설명해 주세요.
 
-<img src="https://i0.wp.com/seo.tbwakorea.com/wp-content/uploads/2023/09/%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8_html.png?w=1920&ssl=1" alt="semantic tag" width="600px">
+<img src="./SemanticTag.webp" alt="semantic tag" width="600px">
 
 <br>
 

@@ -2,7 +2,7 @@
 
 ### 📚 CSS의 Cascading에 대해 설명해 주세요.
 
-![cascade](https://img.freepik.com/free-photo/environment-landscape-stone-cascade-saigon-beautiful_1417-1359.jpg)
+![cascade](./Cascading.jpeg)
 
 CSS는 Cascading Style Sheet의 약자로, 'Cascading'은 '폭포'처럼 규칙이 위에서 아래로 흐르며 합쳐지는 것을 의미합니다.
 
