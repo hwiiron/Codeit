@@ -1,0 +1,62 @@
+#mouse {
+	width: 240px;
+	height: 390px;
+	border: 1px solid #333333;
+	border-radius: 150px;
+	overflow: hidden;
+}
+
+#btns {
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: 150px;
+	border-bottom: 1px solid #333333;
+}
+
+#btn0 {
+	width: calc(50% - 1px);
+	height: 100%;
+	border-right: 1px solid #333333;
+}
+
+#btn1 {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #FFFFFF;
+	width: 40px;
+	height: 90px;
+	border: 1px solid #333333;
+	border-radius: 20px;
+}
+
+#btn2 {
+	width: 50%;
+	height: 100%;
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	font-weight: 900;
+}
+
+.clicked-0 #btn0 {
+	background-color: #EB2F2F;
+}
+
+.clicked-1 #btn1 {
+	background-color: #FFB62E;
+}
+
+.clicked-2 #btn2 {
+	background-color: #FFFF58;
+}
+
+.dblclick #btn0 {
+	background-color: #0CB30C;
+}

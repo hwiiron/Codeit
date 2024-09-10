@@ -1,0 +1,108 @@
+#my-input {
+	width: 200px;
+	height: 30px;
+	font-size: 20px;
+}
+
+.events {
+	display: flex;
+	justify-content: space-between;
+	width: 333px;
+	height: 34px;
+	margin: 10px 0;
+	border: 1px solid #333333;
+	border-left: 0;
+}
+
+.event {
+	width: 50%;
+	padding: 5px;
+	text-align: center;
+	line-height: 28px;
+	border-left: 1px solid #333333;
+}
+
+.check {
+	color: #FFFFFF;
+}
+
+#keydown.check {
+	background-color: #EB2F2F;
+}
+
+#keypress.check {
+	background-color: #0CB30C;
+}
+
+#keyup.check {
+	background-color: #2757F5;
+}
+
+.function-keys {
+	display: flex;
+	justify-content: space-between;
+	width: 700px;
+	margin-bottom: 10px;
+}
+
+.main-keys {
+	display: flex;
+	flex-flow: row wrap;
+	width: 700px;
+	height: 300px;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.main-keys > .row {
+	width: 100%;
+}
+
+.key {
+	width: 43px;
+	height: 43px;
+	margin: 1px;
+	text-align: center;
+	line-height: 47px;
+	border: 1px solid #333333;
+	border-radius: 3px;
+	box-shadow: none;
+	transform: translateY(0);
+}
+
+#Backspace,
+#Tab {
+	width: 79px;
+}
+
+#CapsLock,
+#Enter {
+	width: 86px;
+}
+
+#ShiftLeft,
+#ShiftRight {
+	width: 110px;
+}
+
+#ControlLeft,
+#ControlRight,
+#AltLeft,
+#AltRight,
+#MetaLeft {
+	width: 50px;
+}
+
+#Space {
+	width: 284px;
+}
+
+.on {
+	color: #FFFFFF;
+	background-color: #7E7E7E;
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+	transform: translateY(1px);
+}

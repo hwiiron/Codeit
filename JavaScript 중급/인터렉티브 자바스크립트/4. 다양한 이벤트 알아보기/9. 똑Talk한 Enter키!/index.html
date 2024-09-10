@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Codeit Messenger</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img class="background" src="imgs/background.png">  
+  <div class="container">
+    <div class="header">
+      <button class="back-btn">
+        <img src="imgs/left-arrow.png" width="30" height="30">  
+      </button>
+      <img class="profile-pic" src="imgs/profile.png" width="40" height="40">
+      <div class="info-block">
+        <p class="username">썸남</p>
+        <p class="status">1시간 전에 활동</p>
+      </div>
+      <div class="call-box">
+        <button>
+          <img src="imgs/phone-call.png" width="20" height="20">
+        </button>
+        <button>
+          <img src="imgs/video-call.png" width="20" height="20">
+        </button>
+      </div>
+    </div>
+
+    <div id="chat-box">
+      <div class=" bubble friend-bubble">
+        자니?
+      </div>
+      <div class=" bubble friend-bubble">
+        자나보네..ㅎ
+      </div>
+      <div class=" bubble friend-bubble">
+        잘 자 :)
+      </div>
+    </div>
+
+    <div class="footer">
+      <textarea id="input" placeholder="메시지를 입력하세요..." autofocus="true"></textarea>
+      <button id="send">
+        <img src="imgs/send.png" width="24" height="24">  
+      </button>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

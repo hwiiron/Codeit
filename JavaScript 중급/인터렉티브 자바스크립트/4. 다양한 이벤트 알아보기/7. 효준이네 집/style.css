@@ -1,0 +1,269 @@
+* {
+	box-sizing: border-box;
+}
+
+.map {
+	display: flex;
+	width: 690px;
+	height: 500px;
+	border: 5px solid #000000;
+}
+
+.balcony {
+	position: relative;
+	width: 120px;
+	height: 100%;
+	border-right: 5px solid #000000;
+	background-color: #fcf3e2;	
+}
+
+.room {
+	width: 260px;
+	height: 100%;
+	border-right: 5px solid #000000;
+	background-color: #f9edc4;
+}
+
+.room-1 {
+	position: relative;
+	height: 270px;
+	border-bottom: 5px solid #000000;
+}
+
+.room-1 .door {
+	right: -5px;
+	bottom: 5px;
+	border-radius: 35px 0 0 0;
+}
+
+.room-2 {
+	position: relative;
+	height: 220px;
+}
+
+.room-2 .window-2 {
+	left: unset;
+	right: -6px;
+	z-index: 1;
+}
+
+.other {
+	display: flex;
+	flex-flow: wrap;
+	width: 300px;
+}
+
+.bathroom {
+	position: relative;
+	width: 155px;
+	height: 220px;
+	border-right: 5px solid #000000;
+	border-bottom: 5px solid #000000;
+	background-color: #e5f2f5;
+}
+
+.bathroom .door {
+	bottom: -5px;
+	left: 5px;
+	border-radius: 0 35px 0 0;
+}
+
+.bath {
+	position: relative;
+	width: 100%;
+	height: 60px;
+	background-color: #ffffff;
+	border-bottom: 1px solid #000000;
+}
+
+.bath::after {
+	display: block;
+	content: '';
+	width: 80%;
+	height: 75%;
+	position: absolute;
+	top: calc(50% - 1px);
+	left: calc(50% - 2px);
+	transform: translate(-50%, -50%);
+	border: 1px solid #000000;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+
+.bathroom-block {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 25px;
+	height: 155px;
+	border-left: 1px solid #000000;
+}
+
+.bathroom-block::after {
+	display: block;
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #FFFFFF;
+}
+
+.sink {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 40px;
+	height: 45px;
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	border-radius: 60px;
+}
+
+.sink::after {
+	display: block;
+	content: '';
+	width: 70%;
+	height: 70%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid #000000;
+	border-radius: 30px;
+}
+
+.toilet {
+	position: absolute;
+	bottom: 20px;
+	right: 15px;
+	width: 60px;
+	height: 40px;
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	border-radius: 50%;
+}
+
+.utility-room {
+	position: relative;
+	width: 145px;
+	height: 220px;
+	border-bottom: 5px solid #000000;
+	background-color: #e5e5e5;
+}
+
+.utility-room .door {
+	bottom: -5px;
+	left: 5px;
+	border-radius: 0 35px 0 0;
+}
+
+.entrance {
+	position: relative;
+	width: 300px;
+	height: 130px;
+	background: linear-gradient(90deg, #dfa24d 150px, #fdfbfd 150px);
+}
+
+.entrance .door {
+	top: 15px;
+	right: -35px;
+	border-radius: 0 0 35px 0;
+}
+
+.entrance .wall {
+	right: 0;
+	bottom: 0px;
+}
+
+.kitchen {
+	position: relative;
+	width: 330px;
+	height: 140px;
+	background-color: #dfa24d;
+}
+
+.kitchen-block {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 190px;
+	height: 60px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	background-color: #ffffff;
+}
+
+.kitchen-sink {
+	width: 60px;
+	height: 40px;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+
+.stoves {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 70px;
+	height: 40px;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+
+.stove {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	border: 1px solid #000000;
+}
+
+.door {
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	border: 1px solid #000000;
+	background-color: white;
+}
+
+.window {
+	display: flex;
+	flex-flow: wrap;
+	width: 7px;
+	height: 150px;
+	position: absolute;
+	left: -6px;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: white;
+	border-top: 1px solid #000000;
+	border-right: 1px solid #000000;
+}
+
+.window span {
+	display: block;
+	width: 50%;
+	height: 50%;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+}
+
+.wall {
+	width: 150px;
+	height: 5px;
+	position: absolute;
+	background-color: #000000;
+}
+
+span.title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+	font-weight: 600;
+}
