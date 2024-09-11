@@ -164,7 +164,7 @@
   
   #fandaMarket .inner {
     width: 744px;
-    background: url(../images/Img_home_bottom.svg) no-repeat center bottom;
+    background: url(../images/Img_home_bottom.svg) no-repeat center bottom -1px;
     background-size: 100% 397px;
     text-align: center;
     padding-top: 201px;
@@ -233,7 +233,6 @@
 
   #fandaMarket .inner {
     width: 375px;
-    background-position: center bottom -1px;
     background-size: 100%;
     padding-top: 121px;
   }
