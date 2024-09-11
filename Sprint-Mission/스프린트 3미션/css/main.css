@@ -204,6 +204,10 @@
     padding: 52px 12px 83px 12px;
   }
 
+  #content .itemList {
+    gap: 40px;
+  }
+
   #content .itemList li img {
     border-radius: 7px;
     width: 100%;
@@ -229,6 +233,7 @@
 
   #fandaMarket .inner {
     width: 375px;
+    background-position: center bottom -1px;
     background-size: 100%;
     padding-top: 121px;
   }
