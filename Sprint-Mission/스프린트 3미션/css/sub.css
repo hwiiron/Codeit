@@ -125,6 +125,7 @@
 
   .login .inner {
     width: 91.5%;
+    max-width: 400px;
   }
 
   .login .logo {
