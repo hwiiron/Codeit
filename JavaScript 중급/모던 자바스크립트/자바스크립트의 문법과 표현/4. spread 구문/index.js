@@ -90,3 +90,6 @@ const members = ['꿈', '달', '밤'];
 const newObject = {...members};
 
 console.log(newObject); // { '0': '꿈', '1': '달', '2': '밤' }
+
+
+// Spead 구문은 배열을 객체로 펼칠 수 있지만 객체는 배열로 펼칠 수 없다.
