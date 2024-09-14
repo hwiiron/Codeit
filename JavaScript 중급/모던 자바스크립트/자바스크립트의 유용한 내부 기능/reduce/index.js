@@ -1,5 +1,7 @@
 // reduce
 
+// reduce 메소드는 누적값을 계산할 때 활용하는 메소드이다.
+
 const numbers = [1, 2, 3, 4];
 
 // numbers.reduce((acc, el, i, arr) => {
