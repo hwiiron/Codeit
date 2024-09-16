@@ -1,25 +1,24 @@
-// import { title as printTitle, print } from './printer.js';
-// import { title, data as members } from './members.js';
+// 자바스크립트 모듈
 
-// 와일드 카드 import는 불필요한 요소까지 가져와서 필요할 때만 사용 권장
-import * as printerJS from './printer.js'
+// 하나의 파일에 많은 코드를 작성하게 되면 각 코드를 이해하는데 어렵고, 기능 수정이 필요할 때 그 부분을 찾기 쉽지 않기 때문에
+// 하나의 파일에 관리하는 것이 아닌, 기능별로 여러 개의 파일로 분리해서 관리하는 것을 모듈화라고 한다.
 
-import {
-  default as codeit,
-  // default import 시에는 꼭 as를 시켜줘야 사용 가능하다.
-  title as membersTitle,
-  data as members
-} from './members.js';
+// 자바스크립트 모듈화는 코드를 효율적으로 관리할 수 있고, 다른 프로그램에서 재사용이 가능하다는 장점이 있다.
 
-// default as를 생략하고 default 값에 붙여줬던 이름을 중괄호 밖으로 뺼 수 있다.
-import codeit, {
-  // default import 시에는 꼭 as를 시켜줘야 사용 가능하다.
-  title as membersTitle,
-  data as members
-} from './members.js';
+import { title as subTitle, print } from "./printer.js";
+import { data as members } from "./members.js";
 
-// const title = 'Codeit';
+// 가장 위쪽에 import 키워드를 쓰고 현재 파일에서 사용할 변수나 함수명을 쉼표로 구분해서 적고 from 키워드와 모듈 파일의 경로를 적어주면
+// export한 파일의 변수와 함수를 사용할 수 있다.
 
-// 모듈 문법
-print(printerJS.printTitle);
+
+// 모듈 파일에서 사용하고 있는 변수명을 현재 파일에서 사용해야 할 때
+// as 키워드를 통해 이름을 변경해서 사용할 수 있다.
+// as 키워드를 기준으로 왼쪽에 export한 변수, 함수명이고 오른쪽에 새로운 변수, 함수명을 적어주면 된다.
+const title = "은주";
+
+
+print(title);
 print(members);
+
+console.log(subTitle);

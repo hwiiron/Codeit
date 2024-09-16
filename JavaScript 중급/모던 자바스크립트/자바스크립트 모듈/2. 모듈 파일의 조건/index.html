@@ -8,8 +8,22 @@
 </head>
 
 <body>
+  <!-- <script src="printer.js"></script>
+  <script src="index.js"></script> -->
+
   <!-- <script type="module" src="printer.js"></script> -->
+  <!-- 
+    print.js 파일은 export 해서 index.js 파일에서 사용하고 있으므로 스크립트 태그로 html파일에서 연결할 필요가 없다.
+  -->
   <script type="module" src="index.js"></script>
+
+  <!-- 
+  script태그에 type="module"을 적용하지 않으면 여러 파일에 각각 작성된 코드가 하나의 파일에 작성된 것처럼 공유가 된다.
+  이렇게 공유가 되어 버리면 문제가 없어 보일 수 있지만 같은 함수명을 가진 함수는 덮어써질 수도 있고, 중복된 변수나 상수를 선언하여 의도치 않은 결과와 에러를 발생시킬 수 있다.
+
+  이런 문제를 방지하려면 각각의 모듈 파일이 다른 파일과는 스코프를 함부로 공유할 수 없도록 모듈 스코프를 가지고 있어야 한다.
+  모듈 스코프는 script 태그에 type 속성을 module로 적용하면 독립적으로 스코프를 가지게 되어, 다른 파일과 스코프를 공유하지 않도록 한다.
+  -->
 </body>
 
 </html>
