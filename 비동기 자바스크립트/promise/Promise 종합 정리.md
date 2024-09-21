@@ -162,7 +162,7 @@ fetch('https://learn.codeit.krrrr/api/employees')
 
 ### `Promise.all()`
 
-`Promise.all()`은 여러 `Promise`를 동시가 기다릴 때 사용하고, `Promise.all()` 자체도 `Promise`를 리턴한다.
+`Promise.all()`은 여러 `Promise`를 동시에 기다릴 때 사용하고, `Promise.all()` 자체도 `Promise`를 리턴한다.
 
 아규먼트로 전달된 Promise들이 모두 Fulfilled 상태가 되면 Promise도 Fulfilled 상태가 되고,
 Promise 중 하나라도 Rejected 상태가 되면 `Promise.all()`이 리턴하는 Promise는 Rejected 상태가 된다.
