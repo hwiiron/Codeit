@@ -36,7 +36,8 @@
   margin-bottom: 16px;
 }
 
-.login .loginWrap .loginBtn {
+.login .loginWrap .loginBtn,
+.login .loginWrap .signupBtn {
   border-radius: 40px;
   background: var(--gray400);
   width: 100%;
@@ -48,8 +49,8 @@
   transition: 0.3s;
 }
 
-/* .login .loginWrap .loginBtn:hover, */
-.login .loginWrap .loginBtn.active {
+.login .loginWrap .loginBtn.active,
+.login .loginWrap .signupBtn.active {
   background: var(--blue);
 }
 
@@ -146,7 +147,8 @@
     margin-top: 16px;
   }
 
-  .login .loginWrap .loginBtn {
+  .login .loginWrap .loginBtn,
+  .login .loginWrap .signupBtn {
     margin-top: 16px;
   }
 }

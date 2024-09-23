@@ -118,6 +118,32 @@ input:focus {
   border: 1px solid var(--blue);
 }
 
+input.error {
+  border: 1px solid #F74747;
+}
+
+.emailMsg,
+.emailErrMsg,
+.passwordMsg,
+.passwordLength,
+.nicknameMsg,
+.passwordCheckMsg {
+  display: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #F74747;
+  margin: 8px 0 0 16px;
+}
+
+.emailMsg.show,
+.emailErrMsg.show,
+.passwordMsg.show,
+.passwordLength.show,
+.nicknameMsg.show,
+.passwordCheckMsg.show {
+  display: block;
+}
+
 .password {
   position: relative;
 }
