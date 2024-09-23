@@ -49,8 +49,8 @@
   transition: 0.3s;
 }
 
-.login .loginWrap .loginBtn.active,
-.login .loginWrap .signupBtn.active {
+.login .loginWrap .loginBtn.activate,
+.login .loginWrap .signupBtn.activate {
   background: var(--blue);
 }
 
