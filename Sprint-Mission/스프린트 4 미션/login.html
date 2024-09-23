@@ -20,19 +20,25 @@
         <form action="">
           <div class="input">
             <label for="email-input">이메일</label>
-            <input id="email-input" type="text" placeholder="이메일을 입력해주세요.">
+            <input id="email-input" type="text" placeholder="이메일을 입력해주세요." autocomplete="username">
+
+            <span class="emailMsg">이메일을 입력해 주세요.</span>
+            <span class="emailErrMsg">잘못된 이메일 형식입니다.</span>
           </div>
 
           <div class="input">
             <label for="password-input">비밀번호</label>
 
             <div class="password">
-              <input id="password-input" type="password" placeholder="비밀번호를 입력해주세요">
+              <input id="password-input" type="password" placeholder="비밀번호를 입력해주세요" autocomplete="current-password">
               <button class="eye" type="button"></button>
             </div>
+
+            <span class="passwordMsg">비밀번호를 입력해 주세요.</span>
+            <span class="passwordLength">비밀번호를 8자 이상 입력해 주세요.</span>
           </div>
 
-          <button class="loginBtn" type="button" onclick="window.open('https://naver.com')">로그인</button>
+          <button class="loginBtn" type="button" onclick="location.href='items.html'" disabled>로그인</button>
         </form>
       </div>
       <!-- loginWrap -->
@@ -60,6 +66,6 @@
 </body>
 
 <!-- js -->
-<script src="js/login.js"></script>
+<script type="module" src="js/login.js"></script>
 
 </html>
