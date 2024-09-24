@@ -1,15 +1,3 @@
-// 아이콘(눈) 버튼 클릭 시 비밀번호 보이기 / 숨기기
-const visibilityToggleButton = document.querySelector('.eye');
-const passwordInput = document.querySelector('#password-input');
-
-function passwordShow() {
-  const isPasswordHidden = passwordInput.getAttribute('type') === 'password';
-  visibilityToggleButton.classList.toggle('show', isPasswordHidden);  // 조건에 따라 class 토글
-  passwordInput.setAttribute('type', isPasswordHidden ? 'text' : 'password'); 
-}
-
-
-
 // 이메일 형식 체크
 const pattern = /^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z0-9]+/;
 // @을 기준으로 앞 구간이 대, 소문자 or 숫자 조합으로 이루어져 있는지 체크
@@ -38,6 +26,9 @@ function emailCheck() {
 const passwordMsg = document.querySelector('.passwordMsg');
 const passwordLength = document.querySelector('.passwordLength');
 
+const passwordCheckInput = document.querySelector('#passwordCheck-input');
+const passwordCheckMsg = document.querySelector('.passwordCheckMsg');
+
 function passwordCheck() {
   passwordLength.classList.remove('show');
   passwordMsg.classList.remove('show');
@@ -47,6 +38,19 @@ function passwordCheck() {
   } else if (passwordInput.value.length < 8) {
     passwordLength.classList.add('show');
   }
+
+  // 비밀번호 확인 먼저 입력 후 비밀번호 입력 시 동작 안해서 추가
+  if (passwordCheckInput.value == passwordInput.value) {
+    passwordCheckMsg.classList.remove('show');
+  }
+}
+
+
+
+// 비밀번호 확인
+function passwordConfirm() {
+  const passwordMatching = passwordInput.value !== passwordCheckInput.value;
+  passwordCheckMsg.classList.toggle('show', passwordMatching);
 }
 
 
@@ -82,13 +86,25 @@ function nickNameCheck() {
 
 
 
-// 비밀번호 확인
-const passwordRepeat = document.querySelector('#passwordCheck-input');
-const passwordCheckMsg = document.querySelector('.passwordCheckMsg');
+// 비밀번호 - 아이콘(눈) 버튼 클릭 시 비밀번호 보이기 / 숨기기
+const passwordInput = document.querySelector('#password-input');
+const passwordToggleBtn = document.querySelector('.passwordToggleBtn');
 
-function passwordConfirm() {
-  const passwordMatching = passwordInput.value !== passwordRepeat.value;
-  passwordCheckMsg.classList.toggle('show', passwordMatching);
+function passwordShow() {
+  const isPasswordHidden = passwordInput.getAttribute('type') === 'password';
+  passwordToggleBtn.classList.toggle('show', isPasswordHidden);  // 조건에 따라 class 토글
+  passwordInput.setAttribute('type', isPasswordHidden ? 'text' : 'password'); 
+}
+
+
+
+// 비밀번호 확인 - 아이콘(눈) 버튼 클릭 시 비밀번호 보이기 / 숨기기
+const passwordCheckToggleBtn = document.querySelector('.passwordCheckToggleBtn');
+
+function passwordCheckShow() {
+  const isPasswordHidden = passwordCheckInput.getAttribute('type') === 'password';
+  passwordCheckToggleBtn.classList.toggle('show', isPasswordHidden);  // 조건에 따라 class 토글
+  passwordCheckInput.setAttribute('type', isPasswordHidden ? 'text' : 'password'); 
 }
 
 
@@ -100,7 +116,7 @@ function activateSignupBtnState () {
   const signupFormValid = pattern.test(emailInput.value) &&
                           nickNameInput.value !== '' &&
                           passwordInput.value.length >= 8 &&
-                          passwordInput.value == passwordRepeat.value;
+                          passwordInput.value == passwordCheckInput.value;
 
   signupBtn.classList.toggle('activate', signupFormValid);
   signupBtn.disabled = !signupFormValid;
@@ -110,11 +126,11 @@ function activateSignupBtnState () {
 
 // 이메일, 닉네임, 비밀번호, 비밀번호 확인 입력 후 엔터키 누르면 로그인 버튼 클릭
 function signupOnEnter(e) {
-  if (e.keyCode == 13 && pattern.test(emailInput.value) && nickNameInput.value !== '' && passwordInput.value.length >= 8 && passwordInput.value == passwordRepeat.value) {
+  if (e.keyCode == 13 && pattern.test(emailInput.value) && nickNameInput.value !== '' && passwordInput.value.length >= 8 && passwordInput.value == passwordCheckInput.value) {
     signupBtn.click();
   }
 }
 
 
 
-export { visibilityToggleButton, emailInput, passwordInput, nickNameInput, passwordRepeat, signupBtn, passwordShow, emailCheck, passwordCheck, activateLoginBtnState, loginOnEnter, nickNameCheck, passwordConfirm, activateSignupBtnState, signupOnEnter }
+export { passwordToggleBtn, passwordCheckToggleBtn, emailInput, passwordInput, nickNameInput, passwordCheckInput, signupBtn, passwordShow, passwordCheckShow, emailCheck, passwordCheck, activateLoginBtnState, loginOnEnter, nickNameCheck, passwordConfirm, activateSignupBtnState, signupOnEnter }
