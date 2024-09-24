@@ -4,7 +4,7 @@
 
 // mbti로 mbti 특정 mbti에 해당하는 설문만 필터할 수 있고, limit, offset 페이지네이션에 사용됩니다.
 
-//페이지네이션이랑 모든 내용을 한꺼번에 보여주지 않고 페이지처럼 나눠서 보여주는 것이다.
+//페이지네이션이란 모든 내용을 한꺼번에 보여주지 않고 페이지처럼 나눠서 보여주는 것이다.
 
 // const res = await fetch('https://learn.codeit.kr/api/color-surveys');
 // const res = await fetch('https://learn.codeit.kr/api/color-surveys/?offset=10&limit=10');
