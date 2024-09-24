@@ -153,7 +153,8 @@ input.error {
   padding-right: 56px;
 }
 
-.password .eye {
+.password .passwordToggleBtn,
+.password .passwordCheckToggleBtn {
   background: url(../images/login/eye_icon.svg) no-repeat;
   background-size: 100%;
   width: 24px;
@@ -164,7 +165,8 @@ input.error {
   transform: translateY(-50%);
 }
 
-.password .eye.show {
+.password .passwordToggleBtn.show,
+.password .passwordCheckToggleBtn.show {
   background: url(../images/login/eye_show_icon.svg) no-repeat;
   background-size: 100%;
 }
