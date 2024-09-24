@@ -21,32 +21,42 @@
           <div class="input">
             <label for="email-input">이메일</label>
             <input id="email-input" type="text" placeholder="이메일을 입력해주세요.">
+
+            <span class="emailMsg">이메일을 입력해 주세요.</span>
+            <span class="emailErrMsg">잘못된 이메일 형식입니다.</span>
           </div>
 
           <div class="input">
             <label for="nickname-input">닉네임</label>
-            <input id="nickname-input" type="text" placeholder="닉네임을 입력해주세요.">
+            <input id="nickname-input" type="text" placeholder="닉네임을 입력해주세요." autocomplete="username">
+
+            <span class="nicknameMsg">닉네임을 입력해 주세요.</span>
           </div>
 
           <div class="input">
             <label for="password-input">비밀번호</label>
 
             <div class="password">
-              <input id="password-input" type="password" placeholder="비밀번호를 입력해주세요">
-              <button class="eye"></button>
+              <input id="password-input" type="password" placeholder="비밀번호를 입력해주세요" autocomplete="new-password">
+              <button class="passwordToggleBtn" type="button"></button>
             </div>
+
+            <span class="passwordMsg">비밀번호를 입력해 주세요.</span>
+            <span class="passwordLength">비밀번호를 8자 이상 입력해 주세요.</span>
           </div>
 
           <div class="input">
             <label for="passwordCheck-input">비밀번호 확인</label>
 
             <div class="password">
-              <input id="passwordCheck-input" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
-              <button class="eye show"></button>
+              <input id="passwordCheck-input" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요" autocomplete="new-password">
+              <button class="passwordCheckToggleBtn" type="button"></button>
             </div>
+            
+            <span class="passwordCheckMsg">비밀번호가 일치하지 않습니다.</span>
           </div>
 
-          <button class="loginBtn">회원가입</button>
+          <button class="signupBtn" type="button" onclick="location.href='signin.html'" disabled>회원가입</button>
         </form>
       </div>
       <!-- loginWrap -->
@@ -72,5 +82,8 @@
   </div>
   <!-- wrapper -->
 </body>
+
+<!-- js -->
+<script type="module" src="js/signup.js"></script>
 
 </html>
