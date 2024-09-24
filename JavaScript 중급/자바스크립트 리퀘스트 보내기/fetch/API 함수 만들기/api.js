@@ -35,3 +35,16 @@ export async function createColorSurvey(surveyData) {
   const data = await res.json();
   return data;
 }
+
+
+export async function deleteSurvey(id) {
+  const res = await fetch(`https://learn.codeit.kr/api/color-surveys/${id}`, {
+    method: 'DELETE',
+    body: JSON.stringify({"password": "1234"}),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  const data = await res.json();
+  return data;
+}
