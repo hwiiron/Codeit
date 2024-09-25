@@ -114,8 +114,7 @@ input::placeholder {
 }
 
 input:focus {
-  outline: none;
-  border: 1px solid var(--blue);
+  outline-color: var(--blue);
 }
 
 input.error {
