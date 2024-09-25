@@ -10,6 +10,7 @@ emailInput.addEventListener('focusout', emailCheck);
 
 // 비밀번호 체크
 passwordInput.addEventListener('focusout', passwordCheck);
+passwordInput.addEventListener('input', passwordCheck);
 
 
 // 이메일, 비밀번호 입력 시 로그인 버튼 활성화 / 비활성화
