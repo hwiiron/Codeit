@@ -44,3 +44,11 @@ export async function createColorSurvey(surveyData) {
   const data = await res.json();
   return data;
 }
+
+
+// fetch 오류는 크게 두가지 경우가 있습니다. URL이 잘못되었거나, headers 정보가 잘못되어 리퀘스트 자체가 실패하는 경우가 있고, 
+// 리퀘스트를 성공적인데 상태 코드가 실패를 나타내는 경우가 있습니다.
+
+// 여기서 첫 번째 경우에만 fetch가 Rejected 상태가 됩니다. 그래서 두 번째 경우에도 오류를 깔끔하게 처리하려면 수동적으로 오류를 throw 해주면 됩니다.
+
+// 리퀘스트가 성공적으로 처리되고 성공적인 리스폰스가 돌아왔을 때만 데이터를 리턴하고 나머지 모든 경우에 오류를 발생시켜야 api 함수를 사용할 때 try...catch로 로직을 구분할 수 있습니다.
