@@ -1,7 +1,5 @@
 import { getColorSurveys, getColorSurvey, createColorSurvey  } from './api.js';
 
-
-
 try {
   const data = await getColorSurveys({mbti: 'eeee'});
   console.log(data);
