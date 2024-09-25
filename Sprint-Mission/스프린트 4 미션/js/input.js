@@ -10,12 +10,15 @@ const errMsg = document.querySelector('.emailErrMsg');
 
 function emailCheck() {
   // 모든 메시지 숨김
+  emailInput.classList.remove('error');
   msg.classList.remove('show');
   errMsg.classList.remove('show');
 
   if (emailInput.value == '') { // 입력 값이 없을 때
+    emailInput.classList.add('error');
     msg.classList.add('show');
   } else if (!pattern.test(emailInput.value)) { // 입력 값은 있으나 이메일 형식에 맞지 않을 때
+    emailInput.classList.add('error');
     errMsg.classList.add('show');
   }
 }
@@ -30,17 +33,21 @@ const passwordCheckInput = document.querySelector('#passwordCheck-input');
 const passwordCheckMsg = document.querySelector('.passwordCheckMsg');
 
 function passwordCheck() {
+  passwordInput.classList.remove('error');
   passwordLength.classList.remove('show');
   passwordMsg.classList.remove('show');
 
   if (passwordInput.value == '') {
+    passwordInput.classList.add('error');
     passwordMsg.classList.add('show');
   } else if (passwordInput.value.length < 8) {
+    passwordInput.classList.add('error');
     passwordLength.classList.add('show');
   }
 
   // 비밀번호 확인 먼저 입력 후 비밀번호 입력 시 동작 안해서 추가
   if (passwordCheckInput.value == passwordInput.value) {
+    passwordCheckInput.classList.remove('error');
     passwordCheckMsg.classList.remove('show');
   }
 }
@@ -50,6 +57,7 @@ function passwordCheck() {
 // 비밀번호 확인
 function passwordConfirm() {
   const passwordMatching = passwordInput.value !== passwordCheckInput.value;
+  passwordCheckInput.classList.toggle('error', passwordMatching);
   passwordCheckMsg.classList.toggle('show', passwordMatching);
 }
 
@@ -81,6 +89,7 @@ const nicknameMsg = document.querySelector('.nicknameMsg');
 
 function nickNameCheck() {
   const isNickNameEmpty = nickNameInput.value == '';
+  nickNameInput.classList.add('error', isNickNameEmpty);
   nicknameMsg.classList.toggle('show', isNickNameEmpty);
 }
 
