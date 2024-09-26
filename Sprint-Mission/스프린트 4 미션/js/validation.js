@@ -121,7 +121,7 @@ function passwordCheckShow() {
 // 이메일, 닉네임, 비밀번호, 비밀번호 확인 입력 시 로그인 버튼 활성화 / 비활성화
 const signupBtn = document.querySelector('.signupBtn');
 
-function activateSignupBtnState () {
+function activateSignupBtnState() {
   const signupFormValid = pattern.test(emailInput.value) &&
                           nickNameInput.value !== '' &&
                           passwordInput.value.length >= 8 &&
