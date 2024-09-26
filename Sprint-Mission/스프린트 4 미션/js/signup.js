@@ -1,4 +1,20 @@
-import { passwordToggleBtn, passwordCheckToggleBtn,  emailInput, passwordInput, nickNameInput, passwordCheckInput, passwordShow, passwordCheckShow, emailCheck, passwordCheck, nickNameCheck, passwordConfirm, activateSignupBtnState, signupOnEnter } from './input.js';
+import {
+  passwordToggleBtn,
+  passwordCheckToggleBtn,
+  emailInput,
+  passwordInput,
+  nickNameInput,
+  passwordCheckInput,
+  passwordShow,
+  passwordCheckShow,
+  emailCheck,
+  passwordCheck,
+  nickNameCheck,
+  passwordConfirm,
+  activateSignupBtnState,
+  signupOnEnter
+} from './input.js';
+
 
 // 비밀번호 - 아이콘(눈) 버튼 클릭 시 비밀번호 보이기 / 숨기기
 passwordToggleBtn.addEventListener('click', passwordShow);

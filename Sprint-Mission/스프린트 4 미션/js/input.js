@@ -89,7 +89,7 @@ const nicknameMsg = document.querySelector('.nicknameMsg');
 
 function nickNameCheck() {
   const isNickNameEmpty = nickNameInput.value == '';
-  nickNameInput.classList.add('error', isNickNameEmpty);
+  nickNameInput.classList.toggle('error', isNickNameEmpty);
   nicknameMsg.classList.toggle('show', isNickNameEmpty);
 }
 
@@ -142,4 +142,21 @@ function signupOnEnter(e) {
 
 
 
-export { passwordToggleBtn, passwordCheckToggleBtn, emailInput, passwordInput, nickNameInput, passwordCheckInput, signupBtn, passwordShow, passwordCheckShow, emailCheck, passwordCheck, activateLoginBtnState, loginOnEnter, nickNameCheck, passwordConfirm, activateSignupBtnState, signupOnEnter }
+export { 
+  passwordToggleBtn,
+  passwordCheckToggleBtn,
+  emailInput, passwordInput,
+  nickNameInput,
+  passwordCheckInput,
+  signupBtn,
+  passwordShow,
+  passwordCheckShow,
+  emailCheck,
+  passwordCheck,
+  activateLoginBtnState,
+  loginOnEnter,
+  nickNameCheck,
+  passwordConfirm,
+  activateSignupBtnState,
+  signupOnEnter
+}

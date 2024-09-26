@@ -1,4 +1,14 @@
-import { passwordToggleBtn, emailInput, passwordInput, passwordShow, emailCheck, passwordCheck, activateLoginBtnState, loginOnEnter } from './input.js';
+import {
+  passwordToggleBtn,
+  emailInput,
+  passwordInput,
+  passwordShow,
+  emailCheck,
+  passwordCheck,
+  activateLoginBtnState,
+  loginOnEnter
+} from './input.js';
+
 
 // 아이콘(눈) 버튼 클릭 시 비밀번호 보이기 / 숨기기
 passwordToggleBtn.addEventListener('click', passwordShow);
