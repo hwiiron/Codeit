@@ -1,13 +1,29 @@
-// 이메일 형식 체크
 const pattern = /^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z0-9]+/;
-// @을 기준으로 앞 구간이 대, 소문자 or 숫자 조합으로 이루어져 있는지 체크
-// @을 기준으로 뒷 구간이 대, 소문자 or 숫자 조합으로 이루어져 있는지 체크
-// @을 기준으로 뒷 구간에서 .뒷 구간이 대, 소문자 or 숫자 조합으로 이루어져 있는지
 
 const emailInput = document.querySelector('#email-input');
 const msg = document.querySelector('.emailMsg');
 const errMsg = document.querySelector('.emailErrMsg');
 
+const passwordMsg = document.querySelector('.passwordMsg');
+const passwordLength = document.querySelector('.passwordLength');
+
+const passwordCheckInput = document.querySelector('#passwordCheck-input');
+const passwordCheckMsg = document.querySelector('.passwordCheckMsg');
+
+const loginBtn = document.querySelector('.loginBtn');
+
+const nickNameInput = document.querySelector('#nickname-input');
+const nicknameMsg = document.querySelector('.nicknameMsg');
+
+const passwordInput = document.querySelector('#password-input');
+const passwordToggleBtn = document.querySelector('.passwordToggleBtn');
+
+const passwordCheckToggleBtn = document.querySelector('.passwordCheckToggleBtn');
+
+const signupBtn = document.querySelector('.signupBtn');
+
+
+// 이메일 형식 체크
 function emailCheck() {
   // 모든 메시지 숨김
   emailInput.classList.remove('error');
@@ -24,14 +40,7 @@ function emailCheck() {
 }
 
 
-
 // 비밀번호 체크
-const passwordMsg = document.querySelector('.passwordMsg');
-const passwordLength = document.querySelector('.passwordLength');
-
-const passwordCheckInput = document.querySelector('#passwordCheck-input');
-const passwordCheckMsg = document.querySelector('.passwordCheckMsg');
-
 function passwordCheck() {
   passwordInput.classList.remove('error');
   passwordLength.classList.remove('show');
@@ -53,7 +62,6 @@ function passwordCheck() {
 }
 
 
-
 // 비밀번호 확인
 function passwordConfirm() {
   const passwordMatching = passwordInput.value !== passwordCheckInput.value;
@@ -62,16 +70,12 @@ function passwordConfirm() {
 }
 
 
-
 // 이메일, 비밀번호 입력 시 로그인 버튼 활성화 / 비활성화
-const loginBtn = document.querySelector('.loginBtn');
-
 function activateLoginBtnState () {
   const LoginFormValid = pattern.test(emailInput.value) && passwordInput.value.length >= 8;
   loginBtn.classList.toggle('activate', LoginFormValid);
   loginBtn.disabled = !LoginFormValid;
 }
-
 
 
 // 이메일, 비밀번호 입력 후 엔터키 누르면 로그인 버튼 클릭
@@ -82,11 +86,7 @@ function loginOnEnter(e) {
 }
 
 
-
 // 닉네임 체크
-const nickNameInput = document.querySelector('#nickname-input');
-const nicknameMsg = document.querySelector('.nicknameMsg');
-
 function nickNameCheck() {
   const isNickNameEmpty = nickNameInput.value == '';
   nickNameInput.classList.toggle('error', isNickNameEmpty);
@@ -94,33 +94,23 @@ function nickNameCheck() {
 }
 
 
-
 // 비밀번호 - 아이콘(눈) 버튼 클릭 시 비밀번호 보이기 / 숨기기
-const passwordInput = document.querySelector('#password-input');
-const passwordToggleBtn = document.querySelector('.passwordToggleBtn');
-
 function passwordShow() {
   const isPasswordHidden = passwordInput.getAttribute('type') === 'password';
-  passwordToggleBtn.classList.toggle('show', isPasswordHidden);  // 조건에 따라 class 토글
+  passwordToggleBtn.classList.toggle('show', isPasswordHidden);
   passwordInput.setAttribute('type', isPasswordHidden ? 'text' : 'password'); 
 }
 
 
-
 // 비밀번호 확인 - 아이콘(눈) 버튼 클릭 시 비밀번호 보이기 / 숨기기
-const passwordCheckToggleBtn = document.querySelector('.passwordCheckToggleBtn');
-
 function passwordCheckShow() {
   const isPasswordHidden = passwordCheckInput.getAttribute('type') === 'password';
-  passwordCheckToggleBtn.classList.toggle('show', isPasswordHidden);  // 조건에 따라 class 토글
+  passwordCheckToggleBtn.classList.toggle('show', isPasswordHidden);
   passwordCheckInput.setAttribute('type', isPasswordHidden ? 'text' : 'password'); 
 }
 
 
-
 // 이메일, 닉네임, 비밀번호, 비밀번호 확인 입력 시 로그인 버튼 활성화 / 비활성화
-const signupBtn = document.querySelector('.signupBtn');
-
 function activateSignupBtnState() {
   const signupFormValid = pattern.test(emailInput.value) &&
                           nickNameInput.value !== '' &&
@@ -132,14 +122,18 @@ function activateSignupBtnState() {
 }
 
 
-
 // 이메일, 닉네임, 비밀번호, 비밀번호 확인 입력 후 엔터키 누르면 로그인 버튼 클릭
 function signupOnEnter(e) {
-  if (e.keyCode == 13 && pattern.test(emailInput.value) && nickNameInput.value !== '' && passwordInput.value.length >= 8 && passwordInput.value == passwordCheckInput.value) {
+  if (
+    e.keyCode == 13 &&
+    pattern.test(emailInput.value) &&
+    nickNameInput.value !== '' &&
+    passwordInput.value.length >= 8 &&
+    passwordInput.value == passwordCheckInput.value
+  ) {
     signupBtn.click();
   }
 }
-
 
 
 export { 
