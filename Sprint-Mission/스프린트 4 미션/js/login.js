@@ -7,7 +7,7 @@ import {
   passwordCheck,
   activateLoginBtnState,
   loginOnEnter
-} from './input.js';
+} from './validation.js';
 
 
 // 아이콘(눈) 버튼 클릭 시 비밀번호 보이기 / 숨기기
