@@ -12,6 +12,7 @@ import {
 
 // 이메일 형식 체크
 emailInput.addEventListener('focusout', emailCheck);
+emailInput.addEventListener('input', emailCheck);
 
 
 // 비밀번호 체크

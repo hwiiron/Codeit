@@ -51,6 +51,7 @@ function passwordCheck() {
 
 
   // 반대 순서로 "비밀번호 확인" 먼저 입력 후 "비밀번호" 조건들에 맞게 입력 하면, "비밀번호 확인"의 에러 메시지가 사라지지 않는 문제,, 이 방법이 맞나...?
+  // 비밀번호 체크하는 함수인데 아래 조건문이 들어가면 안되겠죠..?
   if (passwordInput.value == passwordCheckInput.value && passwordInput.value.length >= 8) {
     passwordCheckInput.classList.remove('error');
     passwordMismatchError.classList.remove('show');
