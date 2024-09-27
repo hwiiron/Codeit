@@ -2,7 +2,7 @@
 let eye = document.querySelector('.eye');
 let password = document.querySelector('#password-input');
 
-function passwordShow () {
+function passwordToggleVisibility () {
   if (password.getAttribute('type') == 'password') {
     eye.classList.add('show');
     password.setAttribute('type', 'text');
@@ -12,7 +12,7 @@ function passwordShow () {
   }
 }
 
-eye.addEventListener('click', passwordShow);
+eye.addEventListener('click', passwordToggleVisibility);
 
 
 

@@ -121,12 +121,12 @@ input.error {
   border: 1px solid #F74747;
 }
 
-.emailMsg,
-.emailErrMsg,
-.passwordMsg,
-.passwordLength,
-.nicknameMsg,
-.passwordCheckMsg {
+.emailMessage,
+.emailErrorMessage,
+.passwordMessage,
+.passwordLengthError,
+.nickNameMessage,
+.passwordMismatchError {
   display: none;
   font-size: 14px;
   font-weight: 600;
@@ -134,12 +134,12 @@ input.error {
   margin: 8px 0 0 16px;
 }
 
-.emailMsg.show,
-.emailErrMsg.show,
-.passwordMsg.show,
-.passwordLength.show,
-.nicknameMsg.show,
-.passwordCheckMsg.show {
+.emailMessage.show,
+.emailErrorMessage.show,
+.passwordMessage.show,
+.passwordLengthError.show,
+.nickNameMessage.show,
+.passwordMismatchError.show {
   display: block;
 }
 
