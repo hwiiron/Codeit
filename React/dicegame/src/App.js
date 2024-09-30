@@ -26,8 +26,8 @@ function App() {
   return (
     <>
       <div>
-        <Button onClick={handleRollClick}>던지기</Button>
-        <Button onClick={handleClearClick}>처음부터</Button>
+        <Button color='blue' onClick={handleRollClick}>던지기</Button>
+        <Button color='red' onClick={handleClearClick}>처음부터</Button>
       </div>
       
       <div>
