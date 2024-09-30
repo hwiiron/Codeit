@@ -1,22 +1,41 @@
-import Button from './Button';
-import Dice from './Dice';
+import { useState } from 'react';
+import Board from './Board';
+import Button from './Buttons';
+
+function random(n) {
+  return Math.ceil(Math.random() * n);
+}
 
 function App() {
+  const [myHistory, setMyHistory] = useState([]);
+  const [otherHistory, setOtherHistory] = useState([]);
+
+  const handleRollClick = () => {
+    const nextMyNum = random(6);
+    const nextOtherNum = random(6);
+
+    setMyHistory([...myHistory, nextMyNum]);
+    setOtherHistory([...otherHistory, nextOtherNum]);
+  }
+
+  const handleClearClick = () => {
+    setMyHistory([]);
+    setOtherHistory([]);
+  }
+
   return (
-  <div>
-    <div>
-      {/* <Button text='던지기' />
-      <Button text='처음부터' /> */}
-
-      <Button>던지기</Button>
-      <Button>처음부터</Button>
-    </div>
-
-    <Dice color="blue" num={2} />
-    <Dice color="red" num={3} />
-    {/* prop에 숫자를 추가할 때 자바스크립트의 숫자 2를 표현하려면 중괄호로 감싸야 사용 가능하다.  */}
-  </div>
-);
+    <>
+      <div>
+        <Button onClick={handleRollClick}>던지기</Button>
+        <Button onClick={handleClearClick}>처음부터</Button>
+      </div>
+      
+      <div>
+        <Board name='나' color='blue' gameHistory={myHistory} />
+        <Board name='상대' color='red' gameHistory={otherHistory} />
+      </div>
+    </>
+  );
 }
 
 export default App;
