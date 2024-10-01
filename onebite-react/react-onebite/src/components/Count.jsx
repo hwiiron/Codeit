@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const Count = () => {
   const [count, setCount] = useState(0);
@@ -15,6 +15,6 @@ const Count = () => {
       </button>
     </div>
   );
-}
+};
 
 export default Count;
