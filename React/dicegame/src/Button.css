@@ -1,0 +1,29 @@
+.Button {
+  min-width: 120px;
+  padding: 14px 27px;
+  border-radius: 9999px;
+  outline: none;
+  font-size: 18px;
+  font-family: 'NanumSquareRoundEB';
+  cursor: pointer;
+}
+
+.Button.blue {
+  border: 1px solid #7090ff;
+  color: #7090ff;
+  background-color: rgba(0, 89, 255, 0.2);
+}
+
+.Button.blue:hover {
+  background-color: rgba(0, 89, 255, 0.3);
+}
+
+.Button.red {
+  border: 1px solid #ff4664;
+  color: #ff4664;
+  background-color: rgba(255, 78, 78, 0.2);
+}
+
+.Button.red:hover {
+  background-color: rgba(255, 78, 78, 0.3);
+}

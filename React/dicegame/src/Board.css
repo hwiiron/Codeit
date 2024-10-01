@@ -1,0 +1,25 @@
+.Board {
+  display: inline-block;
+  padding: 35px 30px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #272b38;
+}
+
+.Board.Board-winner {
+  border: 1px solid #fff;
+  box-shadow: 0 0 12px 0 hsla(0, 0%, 100%, 0.48);
+}
+
+.Board .Board-heading:first-child {
+  margin-top: 0;
+}
+
+.Board .Board-heading {
+  margin: 45px auto 15px;
+  color: #888d9d;
+  font-weight: 400;
+  font-size: 18px;
+}
