@@ -1,12 +1,10 @@
 import "./App.css";
-import Bulb from "./components/Bulb";
-import Count from "./components/Count";
+import HookExam from "./components/HookExam";
 
 function App() {
   return (
     <>
-      <Bulb />
-      <Count />
+      <HookExam />
     </>
   );
 }
