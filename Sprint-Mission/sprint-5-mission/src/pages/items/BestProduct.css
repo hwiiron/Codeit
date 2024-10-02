@@ -20,7 +20,10 @@
 }
 
 .bestProduct__itemList figure {
+  border-radius: 16px;
+  width: 282px;
   height: 282px;
+  overflow: hidden;
 }
 
 .bestProduct__itemList figure img {
@@ -61,7 +64,7 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("./assets/like_icon.svg") no-repeat;
+  background: url("../../assets/like_icon.svg") no-repeat;
   background-size: 100%;
   position: absolute;
   top: 50%;

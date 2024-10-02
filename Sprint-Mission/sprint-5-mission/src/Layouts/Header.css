@@ -1,4 +1,4 @@
-header {
+/* header {
   border-bottom: 1px solid #dfdfdf;
   height: 70px;
 }
@@ -41,4 +41,43 @@ header {
   width: 40px;
   height: 40px;
   margin-left: auto;
+} */
+
+.inner {
+  width: 1120px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid #dfdfdf;
+  height: 70px;
+}
+
+header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  display: block;
+  width: 153px;
+  height: 51px;
+  background: url(../assets/logo.svg) no-repeat;
+  background-size: 100%;
+  text-indent: -9999px;
+}
+
+header .login {
+  border: 0;
+  border-radius: 8px;
+  background: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 128px;
+  height: 48px;
+  font-weight: 600;
+  color: var(--gray100);
 }

@@ -1,4 +1,4 @@
-import BestProduct from "./components/BestProduct";
+import BestProduct from "./pages/items/BestProduct";
 import Header from "./Layouts/Header";
 
 function App() {
