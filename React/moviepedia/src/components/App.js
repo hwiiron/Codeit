@@ -1,13 +1,19 @@
 import ReviewList from "./ReviewList";
-import items from "../mock.json";
+import mockItems from "../mock.json";
 import { useState } from "react";
 
 const App = () => {
+  const [items, setItems] = useState(mockItems);
   const [order, setOrder] = useState("createdAt");
   const sortedItems = items.sort((a, b) => b[order] - a[order]);
 
   const handleNewestClick = () => setOrder("createdAt");
   const handleBestClick = () => setOrder("rating");
+
+  const handleDelete = (id) => {
+    const onDeleteItems = items.filter((item) => item.id !== id);
+    setItems(onDeleteItems);
+  };
 
   return (
     <>
@@ -17,7 +23,7 @@ const App = () => {
       </div>
 
       <div>
-        <ReviewList items={sortedItems} />
+        <ReviewList items={sortedItems} onDelete={handleDelete} />
       </div>
     </>
   );
