@@ -1,9 +1,9 @@
 import ReviewList from "./ReviewList";
-import mockItems from "../mock.json";
 import { useState } from "react";
+import { getReviews } from "../api";
 
 const App = () => {
-  const [items, setItems] = useState(mockItems);
+  const [items, setItems] = useState([]);
   const [order, setOrder] = useState("createdAt");
   const sortedItems = items.sort((a, b) => b[order] - a[order]);
 
@@ -13,6 +13,11 @@ const App = () => {
   const handleDelete = (id) => {
     const onDeleteItems = items.filter((item) => item.id !== id);
     setItems(onDeleteItems);
+  };
+
+  const handleLoadClick = async () => {
+    const { reviews } = await getReviews();
+    setItems(reviews);
   };
 
   return (
@@ -25,6 +30,8 @@ const App = () => {
       <div>
         <ReviewList items={sortedItems} onDelete={handleDelete} />
       </div>
+
+      <button onClick={handleLoadClick}>불러오기</button>
     </>
   );
 };
