@@ -21,7 +21,6 @@ function ReviewListItem({ item }) {
 }
 
 const ReviewList = ({ items }) => {
-  console.log(items);
   return (
     <ul>
       {items.map((item) => {
