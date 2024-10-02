@@ -10,39 +10,39 @@
   margin-bottom: 16px;
 }
 
-.bestProduct__itemList {
+.bestProduct__list {
   display: flex;
   gap: 24px;
 }
 
-.bestProduct__itemList li {
+.bestProduct__list li {
   width: 282px;
 }
 
-.bestProduct__itemList figure {
+.bestProduct__list figure {
   border-radius: 16px;
   width: 282px;
   height: 282px;
   overflow: hidden;
 }
 
-.bestProduct__itemList figure img {
+.bestProduct__list figure img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.bestProduct__itemList dl {
+.bestProduct__list dl {
   margin-top: 16px;
 }
 
-.bestProduct__itemList dl dt {
+.bestProduct__list dl dt {
   font-size: 14px;
   font-weight: 500;
   color: #1f2937;
 }
 
-.bestProduct__itemList dl dd {
+.bestProduct__list dl dd {
   font-size: 16px;
   font-weight: 700;
   color: #1f2937;

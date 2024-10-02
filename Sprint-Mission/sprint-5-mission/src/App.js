@@ -1,4 +1,5 @@
 import BestProduct from "./pages/items/BestProduct";
+import AllProduct from "./pages/items/AllProduct";
 import Header from "./Layouts/Header";
 
 function App() {
@@ -7,6 +8,8 @@ function App() {
       <Header />
 
       <BestProduct />
+
+      <AllProduct />
     </>
   );
 }

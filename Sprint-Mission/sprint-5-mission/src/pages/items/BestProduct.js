@@ -19,7 +19,7 @@ function BestProduct() {
       <div className="bestProduct__inner">
         <h2 className="bestProduct__title">베스트 상품</h2>
 
-        <ul className="bestProduct__itemList">
+        <ul className="bestProduct__list">
           {items.map((item) => {
             return (
               <li>
