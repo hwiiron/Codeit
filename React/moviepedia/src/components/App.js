@@ -1,5 +1,5 @@
 import ReviewList from "./ReviewList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getReviews } from "../api";
 
 const App = () => {
@@ -15,10 +15,14 @@ const App = () => {
     setItems(onDeleteItems);
   };
 
-  const handleLoadClick = async () => {
+  const handleLoad = async () => {
     const { reviews } = await getReviews();
     setItems(reviews);
   };
+
+  useEffect(() => {
+    handleLoad();
+  }, []);
 
   return (
     <>
@@ -30,8 +34,6 @@ const App = () => {
       <div>
         <ReviewList items={sortedItems} onDelete={handleDelete} />
       </div>
-
-      <button onClick={handleLoadClick}>불러오기</button>
     </>
   );
 };
