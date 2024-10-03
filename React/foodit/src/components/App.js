@@ -17,13 +17,13 @@ function App() {
   };
 
   const handleLoad = async () => {
-    const { foods } = await getFoods();
+    const { foods } = await getFoods(order);
     setItems(foods);
   };
 
   useEffect(() => {
     handleLoad();
-  }, []);
+  }, [order]);
 
   return (
     <div>
