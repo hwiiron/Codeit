@@ -1,14 +1,12 @@
 import BestProduct from "./pages/items/BestProduct";
 import AllProduct from "./pages/items/AllProduct";
-import Header from "./Layouts/Header";
+import { SubHeader } from "./Layouts/Header";
 
 function App() {
   return (
     <>
-      <Header />
-
+      <SubHeader />
       <BestProduct />
-
       <AllProduct />
     </>
   );
