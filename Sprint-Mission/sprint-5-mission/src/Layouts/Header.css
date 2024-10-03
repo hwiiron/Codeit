@@ -87,4 +87,12 @@ header {
   header {
     min-width: 100%;
   }
+
+  .SubHeader__inner {
+    width: 93.5%;
+  }
+
+  .SubHeader__nav {
+    margin-left: 20px;
+  }
 }

@@ -1,5 +1,5 @@
 .allProduct {
-  margin-top: 40px;
+  margin: 40px 0 58px;
 }
 
 .allProduct__inner {
@@ -215,7 +215,27 @@
 }
 
 @media (max-width: 1200px) {
+  .allProduct {
+    margin: 40px 0 72px;
+  }
+
   .allProduct__inner {
-    width: 100%;
+    width: 93.5%;
+  }
+
+  .allProduct__searchInput {
+    width: 242px;
+  }
+
+  .allProduct__list {
+    gap: 40px 2.16%;
+  }
+
+  .allProduct__list li {
+    width: 31.75%;
+  }
+
+  .allProduct__paging {
+    margin-top: 40px;
   }
 }

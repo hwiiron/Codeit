@@ -74,14 +74,15 @@
 
 @media (max-width: 1200px) {
   .bestProduct__inner {
-    width: 100%;
+    width: 93.5%;
   }
 
   .bestProduct__list {
     flex-wrap: wrap;
+    gap: 10px;
   }
 
   .bestProduct__list li {
-    width: 343px;
+    width: 49.2%;
   }
 }

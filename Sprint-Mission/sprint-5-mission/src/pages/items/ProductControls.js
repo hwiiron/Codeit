@@ -10,7 +10,7 @@ const ProductControls = ({
       <input
         className="allProduct__searchInput"
         type="text"
-        placeholder="검색할 상품을 입력해 주세요."
+        placeholder="검색할 상품을 입력해주세요"
       />
 
       <a href="/addItem" className="allProduct__linkButton">
