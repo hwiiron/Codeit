@@ -23,19 +23,20 @@ const signupBtn = document.querySelector(".signupBtn");
 // 이메일 형식 체크
 function checkEmail() {
   // 이메일 input에 입력 값이 없는 경우
-  const isEmailEmpty = emailInput.value == "";
+  const isEmailEmpty = emailInput.value.trim() == "";
   emailInput.classList.toggle("error", isEmailEmpty);
   msg.classList.toggle("show", isEmailEmpty);
 
   // 이메일 input에 입력 값은 있지만 이메일 형식에 맞지 않는 경우
-  const isValidEmailInput = !isEmailEmpty && !pattern.test(emailInput.value);
+  const isValidEmailInput =
+    !isEmailEmpty && !pattern.test(emailInput.value.trim());
   errMsg.classList.toggle("show", isValidEmailInput);
 }
 
 // 비밀번호 체크
 function checkPassword() {
   // 비밀번호 input에 입력 값이 없는 경우
-  const isPasswordEmpty = passwordInput.value == "";
+  const isPasswordEmpty = passwordInput.value.trim() == "";
   passwordInput.classList.toggle("error", isPasswordEmpty);
   passwordMessage.classList.toggle("show", isPasswordEmpty);
 

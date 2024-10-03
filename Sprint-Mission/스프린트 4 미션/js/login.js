@@ -13,7 +13,7 @@ const loginBtn = document.querySelector(".loginBtn");
 // 이메일, 비밀번호 입력 시 로그인 버튼 활성화 / 비활성화
 function activateLoginBtnState() {
   const isLoginFormValid =
-    pattern.test(emailInput.value) && passwordInput.value.length >= 8;
+    pattern.test(emailInput.value.trim()) && passwordInput.value.length >= 8;
   loginBtn.classList.toggle("activate", isLoginFormValid);
   loginBtn.disabled = !isLoginFormValid;
 }
@@ -22,7 +22,7 @@ function activateLoginBtnState() {
 function loginOnEnter(e) {
   if (
     e.keyCode == 13 &&
-    pattern.test(emailInput.value) &&
+    pattern.test(emailInput.value.trim()) &&
     passwordInput.value.length >= 8
   ) {
     loginBtn.click();

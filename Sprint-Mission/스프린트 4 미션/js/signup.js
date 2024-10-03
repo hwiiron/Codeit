@@ -17,14 +17,15 @@ const nickNameMessage = document.querySelector(".nickNameMessage");
 
 // 비밀번호 확인
 function confirmPassword() {
-  const isPasswordMismatch = passwordInput.value !== passwordCheckInput.value;
+  const isPasswordMismatch =
+    passwordInput.value.trim() !== passwordCheckInput.value;
   passwordCheckInput.classList.toggle("error", isPasswordMismatch);
   passwordMismatchError.classList.toggle("show", isPasswordMismatch);
 }
 
 // 닉네임 체크
 function nickNameCheck() {
-  const isNickNameEmpty = nickNameInput.value == "";
+  const isNickNameEmpty = nickNameInput.value.trim() == "";
   nickNameInput.classList.toggle("error", isNickNameEmpty);
   nickNameMessage.classList.toggle("show", isNickNameEmpty);
 }
@@ -43,8 +44,8 @@ function passwordCheckToggleVisibility() {
 // 이메일, 닉네임, 비밀번호, 비밀번호 확인 입력 시 로그인 버튼 활성화 / 비활성화
 function activateSignupBtnState() {
   const isSignupFormValid =
-    pattern.test(emailInput.value) &&
-    nickNameInput.value !== "" &&
+    pattern.test(emailInput.value.trim()) &&
+    nickNameInput.value.trim() !== "" &&
     passwordInput.value.length >= 8 &&
     passwordInput.value == passwordCheckInput.value;
 
@@ -56,8 +57,8 @@ function activateSignupBtnState() {
 function signupOnEnter(e) {
   if (
     e.keyCode == 13 &&
-    pattern.test(emailInput.value) &&
-    nickNameInput.value !== "" &&
+    pattern.test(emailInput.value.trim()) &&
+    nickNameInput.value.trim() !== "" &&
     passwordInput.value.length >= 8 &&
     passwordInput.value == passwordCheckInput.value
   ) {
