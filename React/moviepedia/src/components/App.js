@@ -15,14 +15,14 @@ const App = () => {
     setItems(onDeleteItems);
   };
 
-  const handleLoad = async () => {
-    const { reviews } = await getReviews();
+  const handleLoad = async (orderQuery) => {
+    const { reviews } = await getReviews(orderQuery);
     setItems(reviews);
   };
 
   useEffect(() => {
-    handleLoad();
-  }, []);
+    handleLoad(order);
+  }, [order]);
 
   return (
     <>
