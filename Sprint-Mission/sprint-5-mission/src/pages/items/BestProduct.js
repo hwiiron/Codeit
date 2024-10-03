@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { getBestItems } from "../../api";
+import BestProductItem from "./BestProductItem";
 import "./BestProduct.css";
 
 function BestProduct() {
   const [items, setItems] = useState([]);
 
-  const handleLoad = async () => {
+  const itemsLoad = async () => {
     const { list } = await getBestItems();
     setItems(list);
   };
 
   useEffect(() => {
-    handleLoad();
+    itemsLoad();
   }, []);
 
   return (
@@ -22,21 +23,10 @@ function BestProduct() {
         <ul className="bestProduct__list">
           {items.map((item) => {
             return (
-              <li>
-                <article>
-                  <figure>
-                    <img src={item.images} alt={item.name} />
-                  </figure>
-
-                  <dl>
-                    <dt>{item.name}</dt>
-                    <dd>{item.price.toLocaleString()}원</dd>
-                  </dl>
-
-                  <span className="bestProduct__like">
-                    {item.favoriteCount}
-                  </span>
-                </article>
+              <li key={item.id}>
+                <a href="/item">
+                  <BestProductItem item={item} />
+                </a>
               </li>
             );
           })}

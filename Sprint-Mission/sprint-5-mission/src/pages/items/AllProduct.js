@@ -1,10 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getAllItems } from "../../api";
+import ProductControls from "./ProductControls";
+import AllProductItem from "./AllProductItem";
 import "./AllProduct.css";
 
 function AllProduct() {
+  const [items, setItems] = useState([]);
+  const [order, setOrder] = useState("createdAt");
+
+  const itemsLoad = async () => {
+    const { list } = await getAllItems();
+    setItems(list);
+  };
+
+  useEffect(() => {
+    itemsLoad();
+  }, []);
+
+  // select 커스텀
   const [isActive, setIsActive] = useState(false);
   const toggleOptionList = () => {
     setIsActive(!isActive);
+  };
+
+  // 정렬
+  const sortedItems = [...items].sort((a, b) => b[order] - a[order]);
+
+  const createdAtClick = () => {
+    setOrder("createdAt");
+    setIsActive(false);
+  };
+  const favoriteCountClick = () => {
+    setOrder("favoriteCount");
+    setIsActive(false);
   };
 
   return (
@@ -13,40 +41,58 @@ function AllProduct() {
         <div className="allProduct__inner">
           <div className="allProduct__head">
             <h2 className="allProduct__title">전체 상품</h2>
-
-            <div className="allProduct__controls">
-              <input
-                className="allProduct__searchInput"
-                type="text"
-                placeholder="검색할 상품을 입력해 주세요."
-              />
-
-              <button className="allProduct__linkButton">상품 등록하기</button>
-
-              <div className="allProduct__select">
-                <button
-                  className="allProduct__button"
-                  onClick={toggleOptionList}
-                >
-                  최신순
-                </button>
-
-                <ul
-                  className={`allProduct__optionList ${
-                    isActive ? "active" : ""
-                  }`}
-                >
-                  <li>
-                    <button>최신순</button>
-                  </li>
-
-                  <li>
-                    <button>좋아요순</button>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <ProductControls
+              order={order}
+              isActive={isActive}
+              toggleOptionList={toggleOptionList}
+              createdAtClick={createdAtClick}
+              favoriteCountClick={favoriteCountClick}
+            />
           </div>
+
+          <div className="allProduct__body">
+            <ul className="allProduct__list">
+              {sortedItems.map((item) => {
+                return (
+                  <li key={item.id}>
+                    <a href="/item">
+                      <AllProductItem item={item} />
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          <ol className="allProduct__paging">
+            <li className="prev">
+              <button></button>
+            </li>
+
+            <li className="active">
+              <button>1</button>
+            </li>
+
+            <li>
+              <button>2</button>
+            </li>
+
+            <li>
+              <button>3</button>
+            </li>
+
+            <li>
+              <button>4</button>
+            </li>
+
+            <li>
+              <button>5</button>
+            </li>
+
+            <li className="next">
+              <button></button>
+            </li>
+          </ol>
         </div>
       </section>
     </>
