@@ -10,6 +10,7 @@ const App = () => {
   const [offset, setOffset] = useState(0);
   const [hasNext, setHasNext] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [loadingError, setLoadingError] = useState(null);
 
   const sortedItems = items.sort((a, b) => b[order] - a[order]);
 
@@ -25,9 +26,10 @@ const App = () => {
     let result;
     try {
       setIsLoading(true);
+      setLoadingError(null);
       result = await getReviews(options);
     } catch (error) {
-      console.error(error);
+      setLoadingError(error);
     } finally {
       setIsLoading(false);
     }
@@ -67,6 +69,8 @@ const App = () => {
       {/* <button disabled={!hasNext} onClick={handleLoadMore}>
         더 보기
       </button> */}
+
+      {loadingError?.message && <span>{loadingError.message}</span>}
     </>
   );
 };
