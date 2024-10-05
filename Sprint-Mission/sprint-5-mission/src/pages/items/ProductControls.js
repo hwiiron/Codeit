@@ -2,8 +2,8 @@ const ProductControls = ({
   order,
   isActive,
   toggleOptionList,
-  createdAtClick,
-  favoriteCountClick,
+  recentClick,
+  favoriteClick,
 }) => {
   return (
     <div className="allProduct__controls">
@@ -19,16 +19,16 @@ const ProductControls = ({
 
       <div className="allProduct__select">
         <button className="allProduct__button" onClick={toggleOptionList}>
-          {order === "createdAt" ? "최신순" : "좋아요순"}
+          {order === "recent" ? "최신순" : "좋아요순"}
         </button>
 
         <ul className={`allProduct__optionList ${isActive ? "active" : ""}`}>
           <li>
-            <button onClick={createdAtClick}>최신순</button>
+            <button onClick={recentClick}>최신순</button>
           </li>
 
           <li>
-            <button onClick={favoriteCountClick}>좋아요순</button>
+            <button onClick={favoriteClick}>좋아요순</button>
           </li>
         </ul>
       </div>

@@ -96,3 +96,22 @@ header {
     margin-left: 20px;
   }
 }
+
+@media (max-width: 743px) {
+  .SubHeader__logo {
+    width: 81px;
+    height: 40px;
+    background: url(../assets/logo-m.svg) no-repeat;
+    background-size: 100%;
+  }
+
+  .SubHeader__nav {
+    gap: 8px;
+    margin-left: 8px;
+  }
+
+  .SubHeader__nav li a {
+    font-size: 16px;
+    padding: 0;
+  }
+}

@@ -86,3 +86,18 @@
     width: 49.2%;
   }
 }
+
+@media (max-width: 743px) {
+  .bestProduct__inner {
+    width: 91.7%;
+  }
+
+  .bestProduct__list li {
+    width: 100%;
+  }
+
+  .bestProduct__list figure {
+    border-radius: 20px;
+    height: 343px;
+  }
+}
