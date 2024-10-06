@@ -5,15 +5,33 @@ import "./BestProduct.css";
 
 function BestProduct() {
   const [items, setItems] = useState([]);
+  const [pageSize, setPageSize] = useState(4); // 해상도에 따라 동적으로 설정
 
-  const itemsLoad = async () => {
-    const { list } = await getBestItems();
+  const itemsLoad = async (options) => {
+    const { list } = await getBestItems(options);
     setItems(list);
   };
 
+  // 해상도에 따라 pageSize 변경
   useEffect(() => {
-    itemsLoad();
+    const updatePageSize = () => {
+      if (window.innerWidth >= 1200) {
+        setPageSize(4); // 데스크탑
+      } else if (window.innerWidth >= 744) {
+        setPageSize(2); // 태블릿
+      } else {
+        setPageSize(1); // 모바일
+      }
+    };
+
+    updatePageSize();
+    window.addEventListener("resize", updatePageSize);
+    return () => window.removeEventListener("resize", updatePageSize);
   }, []);
+
+  useEffect(() => {
+    itemsLoad({ pageSize });
+  }, [pageSize]);
 
   return (
     <section>

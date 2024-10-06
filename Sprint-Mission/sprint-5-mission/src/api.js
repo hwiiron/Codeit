@@ -1,13 +1,17 @@
-export async function getBestItems() {
+export async function getBestItems({ pageSize = 4 }) {
   const response = await fetch(
-    "https://panda-market-api.vercel.app/products?page=1&pageSize=4&orderBy=favorite"
+    `https://panda-market-api.vercel.app/products?page=1&pageSize=${pageSize}&orderBy=favorite`
   );
   const data = await response.json();
   return data;
 }
 
-export async function getAllItems({ page = 1, orderBy = "recent" }) {
-  const query = `page=${page}&pageSize=10&orderBy=${orderBy}`;
+export async function getAllItems({
+  page = 1,
+  orderBy = "recent",
+  pageSize = 10,
+}) {
+  const query = `page=${page}&pageSize=${pageSize}&orderBy=${orderBy}`;
   const response = await fetch(
     `https://panda-market-api.vercel.app/products?${query}`
   );
