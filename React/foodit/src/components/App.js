@@ -58,10 +58,14 @@ function App() {
     handleLoad({ order, cursor, search });
   };
 
+  const handleSubmitSuccess = (food) => {
+    setItems((prevItems) => [food, ...prevItems]);
+  };
+
   return (
     <>
       <div>
-        <FoodForm />
+        <FoodForm onSubmitSuccess={handleSubmitSuccess} />
         <button onClick={handleNewestClick}>최신순</button>
         <button onClick={handleCalorieClick}>칼로리순</button>
 
