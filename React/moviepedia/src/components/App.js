@@ -3,10 +3,30 @@ import { createReview, getReviews, updateReview, deleteReview } from "../api";
 import ReviewList from "./ReviewList";
 import ReviewForm from "./ReviewForm";
 import useAsync from "../hooks/useAsync";
+import LocaleSelect from "./LocaleSelect";
+import useTranslate from "../hooks/useTranslate";
 
 const LIMIT = 6;
 
+const ExampleComponent = () => {
+  const [count, setCount] = useState(0);
+
+  // useCallback을 사용하여 handleCallback 메모이제이션
+  const handleCallback = useCallback(() => {
+    console.log(`${count}`);
+  }, [count]); // count가 변경될 때만 새로운 함수 생성
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment Count</button>
+      <button onClick={handleCallback}>Callback Button</button>
+    </div>
+  );
+};
+
 const App = () => {
+  const t = useTranslate();
   const [items, setItems] = useState([]);
   const [order, setOrder] = useState("createdAt");
   const [offset, setOffset] = useState(0);
@@ -67,10 +87,12 @@ const App = () => {
   };
 
   return (
-    <>
+    <div>
+      <ExampleComponent />
+      <LocaleSelect />
       <div>
         <button onClick={handleNewestClick}>최신순</button>
-        <button onClick={handleBestClick}>베스트순</button>
+        <button onClick={handleBestClick}>{t("best button")}</button>
       </div>
 
       <ReviewForm
@@ -94,7 +116,7 @@ const App = () => {
       </button> */}
 
       {loadingError?.message && <span>{loadingError.message}</span>}
-    </>
+    </div>
   );
 };
 
