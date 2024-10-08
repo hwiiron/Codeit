@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getFoods } from "../api";
+import { createFood, getFoods, updateFood } from "../api";
 import FoodList from "./FoodList";
 import FoodForm from "./FoodForm";
 
@@ -58,14 +58,25 @@ function App() {
     handleLoad({ order, cursor, search });
   };
 
-  const handleSubmitSuccess = (food) => {
+  const handleCreateSuccess = (food) => {
     setItems((prevItems) => [food, ...prevItems]);
+  };
+
+  const handleUpdateSuccess = (newItem) => {
+    setItems((prevItems) => {
+      const splitIdx = prevItems.findIndex((item) => item.id === newItem.id);
+      return [
+        ...prevItems.slice(0, splitIdx),
+        newItem,
+        ...prevItems.slice(splitIdx + 1),
+      ];
+    });
   };
 
   return (
     <>
       <div>
-        <FoodForm onSubmitSuccess={handleSubmitSuccess} />
+        <FoodForm onSubmit={createFood} onSubmitSuccess={handleCreateSuccess} />
         <button onClick={handleNewestClick}>최신순</button>
         <button onClick={handleCalorieClick}>칼로리순</button>
 
@@ -75,7 +86,12 @@ function App() {
         </form>
       </div>
 
-      <FoodList items={sortedItems} onDelete={handleDelete} />
+      <FoodList
+        items={sortedItems}
+        onDelete={handleDelete}
+        onUpdate={updateFood}
+        onUpdateSuccess={handleUpdateSuccess}
+      />
       {cursor && <button onClick={handleLoadMore}>더 보기</button>}
       {loadingError && <p>{loadingError.message}</p>}
     </>

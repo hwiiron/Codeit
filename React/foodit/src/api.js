@@ -11,7 +11,7 @@ export async function getFoods({
   if (!response.ok) {
     throw new Error("데이터를 불러오는데 실패했습니다.");
   }
-  const body = response.json();
+  const body = await response.json();
   return body;
 }
 
@@ -23,6 +23,18 @@ export async function createFood(formData) {
   if (!response.ok) {
     throw new Error("데이터를 불러오는데 실패했습니다.");
   }
-  const body = response.json();
+  const body = await response.json();
+  return body;
+}
+
+export async function updateFood(id, formData) {
+  const response = await fetch(`${BASE_URL}foods/${id}`, {
+    method: "PUT",
+    body: formData,
+  });
+  if (!response.ok) {
+    throw new Error("데이터를 수정하는데 실패했습니다.");
+  }
+  const body = await response.json();
   return body;
 }
