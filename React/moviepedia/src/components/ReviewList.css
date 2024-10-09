@@ -1,12 +1,98 @@
 .ReviewListItem {
   display: flex;
-  padding: 10px;
   align-items: center;
 }
 
 .ReviewListItem-img {
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
+  width: 182px;
+  height: 262px;
   margin-right: 20px;
+  border-radius: 0 15px 0 15px;
+  object-fit: cover;
+}
+
+.ReviewListItem-rows {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 22px 0 18px;
+  overflow: hidden;
+}
+
+.ReviewListItem-rows .ReviewListItem-title {
+  margin: 0 0 4px;
+}
+
+.ReviewListItem-rows .ReviewListItem-rating {
+  margin-bottom: 8px;
+}
+
+.ReviewListItem-rows .ReviewListItem-date {
+  margin: 0 0 19px;
+}
+
+.ReviewListItem-rows .ReviewListItem-content {
+  display: -webkit-box;
+  flex: 1 1;
+  margin: 0 0 19px;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.ReviewListItem-buttons .ReviewListItem-edit-button {
+  margin-right: 18px;
+}
+
+.ReviewListItem-title {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.ReviewListItem-date {
+  color: #bdbdbd;
+  font-size: 14px;
+  letter-spacing: -0.25px;
+}
+
+.ReviewListItem-content {
+  color: #545357;
+  font-size: 16px;
+  line-height: 1.63;
+  letter-spacing: -0.2px;
+}
+
+.ReviewListItem-edit-button,
+.ReviewListItem-delete-button {
+  padding: 0;
+  border: none;
+  color: #000;
+  font-size: 16px;
+  letter-spacing: -0.28px;
+  background-color: transparent;
+}
+
+.ReviewListItem-delete-button {
+  color: #ff0023;
+}
+
+ul.ReviewList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.ReviewList > li {
+  padding: 30px 0;
+  max-height: 322px;
+  overflow: hidden;
+}
+
+ul.ReviewList > li:first-child {
+  padding-top: 0;
+}
+
+ul.ReviewList:not(:last-child),
+ul.ReviewList > li:not(:last-child) {
+  border-bottom: 1px dashed #c5c5c5;
 }

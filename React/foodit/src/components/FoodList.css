@@ -4,5 +4,138 @@
 }
 
 .FoodListItem {
-  margin: 10px;
+  display: flex;
+}
+
+.FoodListItem .FoodListItem-preview {
+  flex: none;
+  margin-right: 15px;
+}
+
+.FoodListItem-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 11px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.FoodListItem-rows {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+}
+
+.FoodListItem-rows .FoodListItem-title-calorie {
+  flex: none;
+  margin: 0 0 15px;
+}
+
+.FoodListItem-rows .FoodListItem-content {
+  flex: 1 1;
+  margin: 0 0 18px;
+}
+
+.FoodListItem-rows .FoodListItem-date-buttons {
+  flex: none;
+}
+
+.FoodListItem-title-calorie {
+  display: flex;
+  align-items: center;
+}
+
+.FoodListItem-title-calorie .FoodListItem-title {
+  flex-shrink: 1;
+  margin-right: 15px;
+}
+
+.FoodListItem-title-calorie .FoodListItem-calorie {
+  flex: none;
+}
+
+.FoodListItem-title {
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.FoodListItem-calorie {
+  padding: 6px 8px 5px;
+  border-radius: 6px;
+  background-color: #eaf3ea;
+  font-size: 15px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.FoodListItem-content {
+  font-size: 16px;
+  line-height: 1.63;
+  color: #6d7372;
+  display: -webkit-box;
+  overflow: hidden;
+  max-height: 52px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.FoodListItem-date-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.FoodListItem-date-buttons .FoodListItem-date {
+  flex: 1 1;
+}
+
+.FoodListItem-date-buttons .FoodListItem-buttons {
+  flex: none;
+}
+
+.FoodListItem-date {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  color: #c6cdc1;
+}
+
+.FoodListItem-buttons .FoodListItem-edit-button {
+  margin-right: 8px;
+}
+
+.FoodListItem-edit-button,
+.FoodListItem-delete-button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.FoodListItem-edit-button {
+  padding: 6px 12px 4px;
+  border-radius: 5px;
+  border: solid 1px #c8dad4;
+  font-size: 12px;
+  color: #7f8e89;
+}
+
+.FoodListItem-delete-button {
+  padding: 6px 12px 4px;
+  border-radius: 5px;
+  border: solid 1px #e5cdcd;
+  font-size: 12px;
+  color: #b18181;
+}
+
+.FoodList > li {
+  padding: 22px;
+  border-radius: 15px;
+  box-shadow: 0 0 9px 0 rgba(100, 126, 118, 0.09);
+  background-color: #ffffff;
+}
+
+.FoodList > li:not(:last-child) {
+  margin-bottom: 30px;
 }

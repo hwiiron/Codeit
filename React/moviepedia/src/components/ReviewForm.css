@@ -1,9 +1,78 @@
 .ReviewForm {
   display: flex;
-  flex-direction: column;
-  padding: 10px 0;
+  max-width: 100%;
 }
 
-.ReviewForm > :not(:last-child) {
-  margin-bottom: 20px;
+.ReviewForm-preview {
+  flex: none;
+  margin-right: 22px;
+}
+
+.ReviewForm-rows {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ReviewForm-title-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 21px;
+}
+
+.ReviewForm-title-rating .ReviewForm-title {
+  flex: 1 1;
+  margin-right: 22px;
+  min-width: 0;
+}
+
+.ReviewForm-rows .ReviewForm-content {
+  height: 127px;
+  margin-bottom: 16px;
+  resize: none;
+}
+
+.ReviewForm-error-buttons {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.ReviewForm-error-buttons .ReviewForm-error {
+  flex: 1 1;
+  margin-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ReviewForm-error-buttons .ReviewForm-buttons {
+  flex: none;
+}
+
+.ReviewForm-error {
+  color: #ff0023;
+  font-size: 14px;
+}
+
+.ReviewForm-cancel-button,
+.ReviewForm-submit-button {
+  padding: 11px 40px;
+  border: none;
+  color: #000;
+  font-weight: 600px;
+  font-size: 17px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.ReviewForm-buttons .ReviewForm-cancel-button {
+  margin-right: 10px;
+}
+
+.ReviewForm-submit-button {
+  border-radius: 0 10px 0 10px;
+  color: #fff;
+  background-color: #000;
 }
