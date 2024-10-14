@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import "./List.css";
 import TodoItem from "./TodoItem";
 
@@ -20,9 +20,27 @@ const List = ({ todos, onUpdate, onDelete }) => {
 
   const filteredTodos = getFilteredData();
 
+  const { totalCount, doneCount, notDoneCount } = useMemo(() => {
+    const totalCount = todos.length;
+    const doneCount = todos.filter((todo) => todo.isDone).length;
+    const notDoneCount = totalCount - doneCount;
+
+    return {
+      totalCount,
+      doneCount,
+      notDoneCount,
+    };
+  }, [todos]);
+  // 의존성 배열 : deps
+
   return (
     <div className="List">
       <h4>Todo List 🌱</h4>
+      <div>
+        <div>total: {totalCount}</div>
+        <div>done: {doneCount}</div>
+        <div>notDone: {notDoneCount}</div>
+      </div>
       <input
         value={search}
         onChange={onChangeSearch}
