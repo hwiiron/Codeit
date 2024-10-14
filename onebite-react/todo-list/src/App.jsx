@@ -1,5 +1,12 @@
 import "./App.css";
-import { useState, useRef, useReducer, useCallback } from "react";
+import {
+  useState,
+  useRef,
+  useReducer,
+  useCallback,
+  createContext,
+  useMemo,
+} from "react";
 import Editor from "./components/Editor";
 import Header from "./components/Header";
 import List from "./components/List";
@@ -40,18 +47,14 @@ function reducer(state, action) {
   }
 }
 
+export const TodoStateContext = createContext();
+export const TodoDispatchContext = createContext();
+
 function App() {
   const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 
   const onCreate = useCallback((content) => {
-    // const newTodo = {
-    //   id: idRef.current++,
-    //   isDone: false,
-    //   content: content,
-    //   date: new Date().getTime(),
-    // };
-
     dispatch({
       type: "CREATE",
       data: {
@@ -64,37 +67,11 @@ function App() {
   }, []);
 
   const onUpdate = useCallback((targetId) => {
-    // todos State의 값들 중에
-    // targetId와 일치하는 id를 갖는 아이템의 isDone 변경
-
-    // 인수: todos 배열에서 targetId와 일치하는 id를 갖는 요소의 데이터만 딱 바꾼 새로운 배열
-    // setTodos(
-    //   todos.map((todo) => {
-    //     if (todo.id === targetId) {
-    //       return {
-    //         ...todo,
-    //         isDone: !todo.isDone,
-    //       };
-    //     }
-    //     return todo;
-    //   })
-    // );
-
     dispatch({
       type: "UPDATE",
       targetId: targetId,
     });
   }, []);
-
-  // const onDelete = (targetId) => {
-  //   인수: todos 배열에서 targetId와 일치하는 id를 갖는 요소만 삭제한 새로운 배열
-  //   setTodos(todos.filter((todo) => todo.id !== targetId));
-
-  //   dispatch({
-  //     type: "DELETE",
-  //     targetId: targetId,
-  //   });
-  // };
 
   const onDelete = useCallback((targetId) => {
     dispatch({
@@ -103,11 +80,20 @@ function App() {
     });
   }, []);
 
+  const memoizedDispatch = useMemo(() => {
+    return { onCreate, onUpdate, onDelete };
+  }, []);
+
   return (
     <div className="App">
       <Header />
-      <Editor onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+
+      <TodoStateContext.Provider value={todos}>
+        <TodoDispatchContext.Provider value={memoizedDispatch}>
+          <Editor />
+          <List />
+        </TodoDispatchContext.Provider>
+      </TodoStateContext.Provider>
     </div>
   );
 }
