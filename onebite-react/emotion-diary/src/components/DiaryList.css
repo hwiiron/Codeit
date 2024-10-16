@@ -1,0 +1,19 @@
+.DiaryList .menu_bar {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.DiaryList .menu_bar select {
+  background-color: rgb(246, 246, 246);
+  border: none;
+  border-radius: 5px;
+
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.DiaryList .menu_bar button {
+  flex: 1;
+}
