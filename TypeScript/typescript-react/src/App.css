@@ -1,0 +1,42 @@
+.login {
+  margin: 120px auto;
+  width: 360px;
+}
+
+.login-title {
+  color: #4e4e4e;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.login-forgot {
+  text-align: right;
+}
+
+.login-forgot-link {
+  font-size: 14px;
+  color: #ababab;
+}
+
+.login-signup {
+  font-size: 14px;
+  text-align: center;
+  color: #ababab;
+}
+
+.login-signup-link {
+  color: #2c2c2c;
+}
+
+.locale {
+  text-align: center;
+  font-size: 14px;
+  text-align: center;
+  color: #2c2c2c;
+}
+
+.locale > span {
+  cursor: pointer;
+}
