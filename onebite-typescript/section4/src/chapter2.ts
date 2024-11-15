@@ -35,4 +35,4 @@ let func1: Func1 = (a, b) => {};
 let func2: Func2 = (a) => {};
 
 func1 = func2;
-func2 = func1;
+// func2 = func1;
