@@ -18,6 +18,8 @@
 }
 
 .image {
+  position: relative;
+  z-index: 0;
   width: 100%;
   aspect-ratio: 1/1;
 }
