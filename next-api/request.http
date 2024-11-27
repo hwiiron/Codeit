@@ -1,0 +1,24 @@
+GET http://localhost:3000/api/short-links
+
+###
+
+GET http://localhost:3000/api/short-links/1?q=shinhwichul
+
+###
+
+POST http://localhost:3000/api/short-links/1
+Content-Type: application/json
+
+{
+  "title": "shinhwichul"
+}
+
+###
+
+GET http://localhost:3000/api/short-links/1
+Cookie: session-id=codeit1234
+
+###
+
+PATCH http://localhost:3000/api/short-links/1
+Cookie: session-id=codeit1234
