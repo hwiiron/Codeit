@@ -1,13 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import BookItem from "@/components/book-item";
 import { BookData } from "@/types";
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: {
-    q?: string;
-  };
-}) {
+export default async function Page({ searchParams }: any) {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/book/search?q=${searchParams.q}`
   );
