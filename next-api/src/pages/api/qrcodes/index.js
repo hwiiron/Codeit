@@ -1,30 +1,24 @@
-export default function Handler(req, res) {
+import QRCode from "../../../db/models/QRCode";
+import dbConnect from "@/db/dbConnect";
+
+export default async function Handler(req, res) {
+  await dbConnect();
+
   switch (req.method) {
     case "GET":
-      res.send([
-        {
-          id: "abc!!",
-          title: "위키피디아 Next.js",
-          url: "https://en.wikipedia.org/wiki/Next.js",
-        },
-        {
-          id: "def",
-          title: "코드잇 자유게시판",
-          url: "https://codeit.kr/community/general",
-        },
-        {
-          id: "ghi",
-          title: "코드잇 질문답변",
-          url: "https://www.codeit.kr/community/questions",
-        },
-      ]);
+      // 아래 코드를 사용해서 스키마의 프로퍼티 값을 출력해 주세요.
+      const props = Object.keys(QRCode.schema.paths);
+      console.log(props);
+
+      const qrCodes = await QRCode.find();
+
+      res.send(qrCodes);
       break;
 
     case "POST":
-      res.status(201).send({
-        title: "위키피디아 Next.js",
-        url: "https://en.wikipedia.org/wiki/Next.js",
-      });
+      const newQRCode = await QRCode.create(req.body);
+
+      res.status(201).send(newQRCode);
       break;
 
     default:
