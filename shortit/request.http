@@ -1,0 +1,82 @@
+GET http://localhost:3000/api/short-links/674d02e3c37ebedfad6a1964
+
+###
+
+GET http://localhost:3000/api/short-links/1?q=shinhwichul
+
+###
+
+POST http://localhost:3000/api/short-links/1
+Content-Type: application/json
+
+{
+  "title": "shinhwichul"
+}
+
+###
+
+GET http://localhost:3000/api/short-links/1
+Cookie: session-id=codeit1234
+
+###
+
+PATCH http://localhost:3000/api/short-links/1
+Cookie: session-id=codeit1234
+
+###
+
+GET http://localhost:3000/api/short-links/
+
+###
+
+POST http://localhost:3000/api/short-links/
+Content-Type: application/json
+
+{
+  "title": "shinhwichul",
+  "url": "https://hwiiron.com"
+}
+
+###
+
+PATCH http://localhost:3000/api/short-links/674d02e3c37ebedfad6a1964
+Content-Type: application/json
+
+{
+  "title": "hwiiron"
+}
+
+###
+
+DELETE http://localhost:3000/api/short-links/674d040ec37ebedfad6a1968
+
+###
+
+POST http://localhost:3000/api/qrcodes/
+Content-Type: application/json
+
+{
+  "title": "hwiiron",
+  "url": "https://hwiiron.com"
+}
+
+###
+
+GET http://localhost:3000/api/qrcodes/
+
+###
+
+GET http://localhost:3000/api/qrcodes/674d1070b28cf3ab38986d9a
+
+###
+
+PATCH http://localhost:3000/api/qrcodes/674d1070b28cf3ab38986d9a
+Content-Type: application/json
+
+{
+  "title": "시니철"
+}
+
+###
+
+DELETE http://localhost:3000/api/qrcodes/674d1070b28cf3ab38986d9a
