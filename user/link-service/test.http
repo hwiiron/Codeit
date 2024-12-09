@@ -1,0 +1,29 @@
+POST https://learn.codeit.kr/api/link-service/users
+Content-Type: application/json
+
+{
+  "name": "코드잇",
+  "email": "codeit@example.com",
+  "password": "p@ssword"
+}
+
+###
+
+POST https://learn.codeit.kr/api/link-service/auth/login
+Content-Type: application/json
+
+{
+  "email": "codeit@example.com",
+  "password": "p@ssword"
+}
+
+###
+POST https://learn.codeit.kr/api/link-service/auth/token/refreshl
+Cookie: access-token=...
+Cookie: refresh-token=...
+
+###
+
+DELETE https://learn.codeit.kr/api/link-service/auth/logout
+Cookie: access-token=...
+Cookie: refresh-token=...
