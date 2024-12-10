@@ -1,19 +1,20 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Label from '../components/Label';
-import Input from '../components/Input';
-import Button from '../components/Button';
-import HorizontalRule from '../components/HorizontalRule';
-import Link from '../components/Link';
-import GoogleImage from '../assets/google.svg';
-import styles from './LoginPage.module.css';
-import { useAuth } from '../contexts/AuthProvider';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Label from "../components/Label";
+import Input from "../components/Input";
+import Button from "../components/Button";
+import HorizontalRule from "../components/HorizontalRule";
+import Link from "../components/Link";
+import GoogleImage from "../assets/google.svg";
+import styles from "./LoginPage.module.css";
+import { useAuth } from "../contexts/AuthProvider";
+import axios from "../lib/axios";
 
 function LoginPage() {
   const { user, login } = useAuth();
   const [values, setValues] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
   const navigate = useNavigate();
 
@@ -28,13 +29,25 @@ function LoginPage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await login(values);
-    navigate('/me');
+
+    const { email, password } = values;
+    await axios.post(
+      "/auth/login",
+      {
+        email,
+        password,
+      },
+      {
+        withCredentials: true,
+      }
+    );
+    // await login(values);
+    navigate("/me");
   }
 
   useEffect(() => {
     if (user) {
-      navigate('/me');
+      navigate("/me");
     }
   }, [user, navigate]);
 

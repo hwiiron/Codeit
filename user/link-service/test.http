@@ -2,9 +2,9 @@ POST https://learn.codeit.kr/api/link-service/users
 Content-Type: application/json
 
 {
-  "name": "코드잇",
-  "email": "codeit@example.com",
-  "password": "p@ssword"
+  "name": "신휘철",
+  "email": "shinhwiiron@gmail.com",
+  "password": "shinhwiiron"
 }
 
 ###
@@ -13,8 +13,8 @@ POST https://learn.codeit.kr/api/link-service/auth/login
 Content-Type: application/json
 
 {
-  "email": "codeit@example.com",
-  "password": "p@ssword"
+  "email": "shinhwiiron@gmail.com",
+  "password": "shinhwiiron"
 }
 
 ###

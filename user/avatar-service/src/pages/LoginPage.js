@@ -1,17 +1,20 @@
-import { useState } from 'react';
-import Label from '../components/Label';
-import Input from '../components/Input';
-import Button from '../components/Button';
-import HorizontalRule from '../components/HorizontalRule';
-import Link from '../components/Link';
-import GoogleImage from '../assets/google.svg';
-import styles from './LoginPage.module.css';
+import { useState } from "react";
+import Label from "../components/Label";
+import Input from "../components/Input";
+import Button from "../components/Button";
+import HorizontalRule from "../components/HorizontalRule";
+import Link from "../components/Link";
+import GoogleImage from "../assets/google.svg";
+import styles from "./LoginPage.module.css";
+import axios from "../lib/axios";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
   const [values, setValues] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
+  const navigate = useNavigate();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -25,7 +28,18 @@ function LoginPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     const { email, password } = values;
-    console.log({ email, password });
+    // console.log({ email, password });
+    await axios.post(
+      "/auth/login",
+      {
+        email,
+        password,
+      },
+      {
+        withCredentials: true,
+      }
+    );
+    navigate("/me");
   }
 
   return (

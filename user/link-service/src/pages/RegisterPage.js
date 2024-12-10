@@ -45,7 +45,17 @@ function RegisterPage() {
       password,
     });
     // await login({ email, password });
-    // navigate('/me');
+    await axios.post(
+      "/auth/login",
+      {
+        email,
+        password,
+      },
+      {
+        withCredentials: true,
+      }
+    );
+    navigate("/me");
   }
 
   useEffect(() => {
