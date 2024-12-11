@@ -50,10 +50,10 @@ export function AuthProvider({ children }) {
     setAvatar(nextAvatar);
   }
 
-  // useEffect(() => {
-  //   getMe();
-  //   getMyAvatar();
-  // }, []);
+  useEffect(() => {
+    getMe();
+    getMyAvatar();
+  }, []);
 
   return (
     <AuthContext.Provider
