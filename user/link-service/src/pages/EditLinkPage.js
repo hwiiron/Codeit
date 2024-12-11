@@ -5,10 +5,8 @@ import Label from '../components/Label';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import styles from './EditLinkPage.module.css';
-import { useAuth } from '../contexts/AuthProvider';
 
 function EditLinkPage() {
-  useAuth(true);
   const [values, setValues] = useState({
     title: '',
     url: '',

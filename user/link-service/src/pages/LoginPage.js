@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "../lib/axios";
 import Label from "../components/Label";
 import Input from "../components/Input";
 import Button from "../components/Button";
@@ -7,11 +8,8 @@ import HorizontalRule from "../components/HorizontalRule";
 import Link from "../components/Link";
 import GoogleImage from "../assets/google.svg";
 import styles from "./LoginPage.module.css";
-import { useAuth } from "../contexts/AuthProvider";
-import axios from "../lib/axios";
 
 function LoginPage() {
-  const { user, login } = useAuth();
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -29,27 +27,13 @@ function LoginPage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
     const { email, password } = values;
-    await axios.post(
-      "/auth/login",
-      {
-        email,
-        password,
-      },
-      {
-        withCredentials: true,
-      }
-    );
-    // await login(values);
+    await axios.post("/auth/login", {
+      email,
+      password,
+    });
     navigate("/me");
   }
-
-  useEffect(() => {
-    if (user) {
-      navigate("/me");
-    }
-  }, [user, navigate]);
 
   return (
     <>
@@ -86,8 +70,7 @@ function LoginPage() {
           type="button"
           appearance="outline"
           as={Link}
-          to="/api/auth/google"
-          reloadDocument
+          /** @TODO 구글 로그인 구현 */
         >
           <img src={GoogleImage} alt="Google" />
           구글로 시작하기

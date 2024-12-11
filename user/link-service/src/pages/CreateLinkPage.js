@@ -5,10 +5,8 @@ import Label from '../components/Label';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import styles from './CreateLinkPage.module.css';
-import { useAuth } from '../contexts/AuthProvider';
 
 function CreateLinkPage() {
-  useAuth(true);
   const [values, setValues] = useState({
     title: '',
     url: '',
@@ -27,7 +25,10 @@ function CreateLinkPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     const { title, url } = values;
-    await axios.post('/users/me/links', { title, url });
+    await axios.post(
+      '/users/me/links',
+      { title, url },
+    );
     navigate('/me');
   }
 

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "../lib/axios";
 import Label from "../components/Label";
 import Input from "../components/Input";
 import Button from "../components/Button";
@@ -7,7 +9,6 @@ import Link from "../components/Link";
 import GoogleImage from "../assets/google.svg";
 import styles from "./RegisterPage.module.css";
 import { useToaster } from "../contexts/ToasterProvider";
-import axios from "../lib/axios";
 
 function RegisterPage() {
   const [values, setValues] = useState({
@@ -17,6 +18,7 @@ function RegisterPage() {
     passwordRepeat: "",
   });
   const toast = useToaster();
+  const navigate = useNavigate();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -35,12 +37,9 @@ function RegisterPage() {
       return;
     }
     const { name, email, password } = values;
-    console.log({ name, email, password });
-    await axios.post("/users", {
-      name,
-      email,
-      password,
-    });
+    await axios.post("/users", { name, email, password });
+    await axios.post("/auth/login", { email, password });
+    navigate("/me");
   }
 
   return (

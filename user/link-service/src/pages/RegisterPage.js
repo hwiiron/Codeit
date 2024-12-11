@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../lib/axios";
 import Label from "../components/Label";
@@ -9,7 +9,6 @@ import Link from "../components/Link";
 import GoogleImage from "../assets/google.svg";
 import styles from "./RegisterPage.module.css";
 import { useToaster } from "../contexts/ToasterProvider";
-import { useAuth } from "../contexts/AuthProvider";
 
 function RegisterPage() {
   const [values, setValues] = useState({
@@ -20,7 +19,6 @@ function RegisterPage() {
   });
   const navigate = useNavigate();
   const toast = useToaster();
-  const { user, login } = useAuth();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -44,23 +42,12 @@ function RegisterPage() {
       email,
       password,
     });
-    // await login({ email, password });
-    await axios.post(
-      "/auth/login",
-      {
-        email,
-        password,
-      },
-      {
-        withCredentials: true,
-      }
-    );
+    await axios.post("/auth/login", {
+      email,
+      password,
+    });
     navigate("/me");
   }
-
-  useEffect(() => {
-    if (user) navigate("/me");
-  }, [user, navigate]);
 
   return (
     <>
@@ -69,9 +56,6 @@ function RegisterPage() {
         className={styles.GoogleButton}
         type="button"
         appearance="outline"
-        as={Link}
-        to="/api/auth/google"
-        reloadDocument
       >
         <img src={GoogleImage} alt="Google" />
         구글로 시작하기
