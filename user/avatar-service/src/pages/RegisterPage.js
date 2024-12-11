@@ -9,6 +9,7 @@ import Link from "../components/Link";
 import GoogleImage from "../assets/google.svg";
 import styles from "./RegisterPage.module.css";
 import { useToaster } from "../contexts/ToasterProvider";
+import { useAuth } from "../contexts/AuthProvider";
 
 function RegisterPage() {
   const [values, setValues] = useState({
@@ -19,6 +20,7 @@ function RegisterPage() {
   });
   const toast = useToaster();
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -38,7 +40,7 @@ function RegisterPage() {
     }
     const { name, email, password } = values;
     await axios.post("/users", { name, email, password });
-    await axios.post("/auth/login", { email, password });
+    await login({ email, password });
     navigate("/me");
   }
 

@@ -1,25 +1,18 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from '../lib/axios';
-import Label from '../components/Label';
-import Input from '../components/Input';
-import Button from '../components/Button';
-import styles from './SettingPage.module.css';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Label from "../components/Label";
+import Input from "../components/Input";
+import Button from "../components/Button";
+import styles from "./SettingPage.module.css";
+import { useAuth } from "../contexts/AuthProvider";
 
 function SettingPage() {
   const [values, setValues] = useState({
-    name: '',
-    email: '',
+    name: "",
+    email: "",
   });
   const navigate = useNavigate();
-
-  async function getMe() {
-    const res = await axios.get('/users/me');
-    const user = res.data;
-    setValues({
-      ...user,
-    });
-  }
+  const { user, updateMe } = useAuth();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -32,13 +25,19 @@ function SettingPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     const { name, email } = values;
-    await axios.patch('/users/me', { name, email });
-    navigate('/me');
+    await updateMe({ name, email });
+    navigate("/me");
   }
 
   useEffect(() => {
-    getMe();
-  }, []);
+    if (user) {
+      const { name, email } = user;
+      setValues({
+        name,
+        email,
+      });
+    }
+  }, [user]);
 
   return (
     <>

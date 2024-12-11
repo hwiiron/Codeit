@@ -1,8 +1,9 @@
-import styles from './Nav.module.css';
-import Button from './Button';
-import Link from './Link';
-import Avatar from './Avatar';
-import logoImage from '../assets/logo.svg';
+import styles from "./Nav.module.css";
+import Button from "./Button";
+import Link from "./Link";
+import Avatar from "./Avatar";
+import logoImage from "../assets/logo.svg";
+import { useAuth } from "../contexts/AuthProvider";
 
 export function PublicNav() {
   return (
@@ -17,8 +18,9 @@ export function PublicNav() {
 }
 
 function Nav() {
-  const user = null;
-  const avatar = null;
+  // const user = null;
+  // const avatar = null;
+  const { user, avatar, logout } = useAuth();
   const showAuthNav = user && avatar;
 
   return (
@@ -39,6 +41,7 @@ function Nav() {
                 className={styles.Button}
                 as={Link}
                 appearance="secondary"
+                onClick={logout}
               >
                 로그아웃
               </Button>

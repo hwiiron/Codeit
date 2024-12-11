@@ -1,37 +1,24 @@
-import { Link, useNavigate } from 'react-router-dom';
-import axios from '../lib/axios';
-import Card from '../components/Card';
-import Button from '../components/Button';
-import styles from './MyPage.module.css';
-import SettingImage from '../assets/setting.svg';
-import DownloadImage from '../assets/download.svg';
-import ShareImage from '../assets/share.svg';
-import EditImage from '../assets/edit.svg';
-import Avatar from '../components/Avatar';
-import downloadAvatar from '../lib/downloadAvatar';
-import { useToaster } from '../contexts/ToasterProvider';
-import { useEffect, useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import Card from "../components/Card";
+import Button from "../components/Button";
+import styles from "./MyPage.module.css";
+import SettingImage from "../assets/setting.svg";
+import DownloadImage from "../assets/download.svg";
+import ShareImage from "../assets/share.svg";
+import EditImage from "../assets/edit.svg";
+import Avatar from "../components/Avatar";
+import downloadAvatar from "../lib/downloadAvatar";
+import { useToaster } from "../contexts/ToasterProvider";
+import { useAuth } from "../contexts/AuthProvider";
 
 function MyPage() {
-  const [user, setUser] = useState(null);
-  const [avatar, setAvatar] = useState(null);
+  // const [user, setUser] = useState(null);
+  const { user, avatar } = useAuth();
   const navigate = useNavigate();
   const toast = useToaster();
 
-  async function getMe() {
-    const res = await axios.get('/users/me');
-    const user = res.data;
-    setUser(user);
-  }
-
-  async function getMyAvatar() {
-    const res = await axios.get('/users/me/avatar');
-    const avatar = res.data;
-    setAvatar(avatar);
-  }
-
   function handleEditClick() {
-    navigate('/me/edit');
+    navigate("/me/edit");
   }
 
   function handleDownloadClick() {
@@ -41,13 +28,8 @@ function MyPage() {
   function handleShareClick() {
     const url = `${window.location.origin}/${user.id}`;
     navigator.clipboard.writeText(url);
-    toast('info', '공유 링크를 복사했어요.');
+    toast("info", "공유 링크를 복사했어요.");
   }
-
-  useEffect(() => {
-    getMe();
-    getMyAvatar();
-  }, []);
 
   if (!user || !avatar) {
     return null;

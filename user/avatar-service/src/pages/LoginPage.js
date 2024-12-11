@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "../lib/axios";
 import Label from "../components/Label";
 import Input from "../components/Input";
 import Button from "../components/Button";
@@ -8,6 +7,7 @@ import HorizontalRule from "../components/HorizontalRule";
 import Link from "../components/Link";
 import GoogleImage from "../assets/google.svg";
 import styles from "./LoginPage.module.css";
+import { useAuth } from "../contexts/AuthProvider";
 
 function LoginPage() {
   const [values, setValues] = useState({
@@ -15,6 +15,7 @@ function LoginPage() {
     password: "",
   });
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -28,7 +29,7 @@ function LoginPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     const { email, password } = values;
-    await axios.post("/auth/login", { email, password });
+    await login({ email, password });
     navigate("/me");
   }
 
