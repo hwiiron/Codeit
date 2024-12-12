@@ -16,7 +16,7 @@ function HomePage() {
     if (user) {
       navigate("/me");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   return (
     <>

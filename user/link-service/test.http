@@ -1,0 +1,18 @@
+POST https://learn.codeit.kr/api/link-service/auth/login
+Content-Type: application/json
+
+{
+  "email": "shinhwiiron@gmail.com",
+  "password": "shinhwiiron"
+}
+
+
+###
+
+POST https://learn.codeit.kr/api/link-service/auth/token/refresh
+Cookie: refresh-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzMiIsImlhdCI6MTczMzk4MDc1OSwiZXhwIjoxNzM0NTg1NTU5fQ.b2Xwjvo8lNJbMdrYGfe_9I6_8qXLarxf5CfC5bjiQo4; Path=/api/link-service/auth; HttpOnly; Secure; SameSite=None
+
+
+###
+DELETE https://learn.codeit.kr/api/link-service/auth/logout
+Cookie: access-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzMiIsImlhdCI6MTczMzk4ODI1MCwiZXhwIjoxNzMzOTkxODUwfQ.kuAGGc5O19-QJdJqxdT5VT-xSznYnU_anqvT6jvXDg8
