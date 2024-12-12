@@ -12,7 +12,7 @@ function SettingPage() {
     email: "",
   });
   const navigate = useNavigate();
-  const { user, updateMe } = useAuth();
+  const { user, updateMe } = useAuth(true);
 
   function handleChange(e) {
     const { name, value } = e.target;

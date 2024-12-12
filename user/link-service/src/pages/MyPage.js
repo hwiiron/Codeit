@@ -13,7 +13,7 @@ import { useAuth } from "../contexts/AuthProvider";
 
 function MyPage() {
   // const [user, setUser] = useState(null);
-  const { user } = useAuth();
+  const { user } = useAuth(true);
   const [links, setLinks] = useState([]);
   const navigate = useNavigate();
 

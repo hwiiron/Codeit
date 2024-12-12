@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Label from "../components/Label";
 import Input from "../components/Input";
@@ -15,7 +15,7 @@ function LoginPage() {
     password: "",
   });
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { user, login } = useAuth();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -35,6 +35,12 @@ function LoginPage() {
     });
     navigate("/me");
   }
+
+  useEffect(() => {
+    if (user) {
+      navigate("/me");
+    }
+  }, [user, navigate]);
 
   return (
     <>

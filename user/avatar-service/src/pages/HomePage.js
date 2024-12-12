@@ -1,11 +1,22 @@
-import AvatarSelector from '../components/AvatarSelector';
-import Avatar from '../components/Avatar';
-import AvatarPlaceholderImage from '../assets/avatar-placeholder.svg';
-import useRandomAvatarAnimation from '../hooks/useRandomAvatarAnimation';
-import styles from './HomePage.module.css';
+import AvatarSelector from "../components/AvatarSelector";
+import Avatar from "../components/Avatar";
+import AvatarPlaceholderImage from "../assets/avatar-placeholder.svg";
+import useRandomAvatarAnimation from "../hooks/useRandomAvatarAnimation";
+import styles from "./HomePage.module.css";
+import { useAuth } from "../contexts/AuthProvider";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function HomePage() {
+  const { user } = useAuth();
   const avatar = useRandomAvatarAnimation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/me");
+    }
+  }, [user]);
 
   return (
     <>

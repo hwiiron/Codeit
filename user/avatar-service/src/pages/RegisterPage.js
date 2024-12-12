@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../lib/axios";
 import Label from "../components/Label";
@@ -20,7 +20,7 @@ function RegisterPage() {
   });
   const toast = useToaster();
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { user, login } = useAuth();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -43,6 +43,12 @@ function RegisterPage() {
     await login({ email, password });
     navigate("/me");
   }
+
+  useEffect(() => {
+    if (user) {
+      navigate("/me");
+    }
+  }, [user]);
 
   return (
     <>

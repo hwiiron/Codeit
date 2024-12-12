@@ -12,10 +12,9 @@ import { useToaster } from "../contexts/ToasterProvider";
 import { useAuth } from "../contexts/AuthProvider";
 
 function MyPage() {
-  // const [user, setUser] = useState(null);
-  const { user, avatar } = useAuth();
   const navigate = useNavigate();
   const toast = useToaster();
+  const { user, avatar } = useAuth(true);
 
   function handleEditClick() {
     navigate("/me/edit");

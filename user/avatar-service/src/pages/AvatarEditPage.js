@@ -40,14 +40,7 @@ function AvatarProperties({
 }
 
 function AvatarEditPage() {
-  // const initialAvatar = {
-  //   skin: 'tone100',
-  //   hairType: 'none',
-  //   hairColor: 'black',
-  //   clothes: 'tshirtBasic',
-  //   accessories: 'none',
-  // };
-  const { avatar: initialAvatar, updateAvatar } = useAuth();
+  const { avatar: initialAvatar, updateAvatar } = useAuth(true);
   const [avatar, setAvatar] = useState(null);
   const navigate = useNavigate();
 
