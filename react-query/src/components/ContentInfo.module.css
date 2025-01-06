@@ -1,0 +1,10 @@
+.info {
+  display: flex;
+}
+
+.date {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 300;
+  color: grey;
+}

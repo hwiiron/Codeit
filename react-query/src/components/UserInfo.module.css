@@ -1,0 +1,12 @@
+.userInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 10px;
+  color: #494949;
+}
