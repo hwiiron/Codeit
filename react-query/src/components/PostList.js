@@ -8,6 +8,8 @@ function PostList() {
   const { data } = useQuery({
     queryKey: ["posts"],
     queryFn: getPosts,
+    staleTime: 60 * 1000,
+    gcTime: 60 * 1000 * 10,
   });
 
   const posts = data?.results ?? [];
