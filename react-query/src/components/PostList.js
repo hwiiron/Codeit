@@ -1,18 +1,30 @@
-import { useQuery } from "@tanstack/react-query";
-import { getPosts } from "../api";
-import Post from "./Post";
-import styles from "./PostList.module.css";
+import { useQuery } from '@tanstack/react-query';
+import { getPosts, getPostsByUsername } from '../api';
+import Post from './Post';
+import { FEED_VARIANT } from '../values';
+import styles from './PostList.module.css';
 
-function PostList() {
-  // 여기에 코드를 작성하세요
-  const { data } = useQuery({
-    queryKey: ["posts"],
-    queryFn: getPosts,
-    staleTime: 60 * 1000,
-    gcTime: 60 * 1000 * 10,
+function PostList({ variant = FEED_VARIANT.HOME_FEED }) {
+  let postsQueryKey;
+  let postsQueryFn;
+
+  if (variant === FEED_VARIANT.HOME_FEED) {
+    postsQueryKey = ['posts'];
+    postsQueryFn = getPosts;
+  } else if (variant === FEED_VARIANT.MY_FEED) {
+    const username = 'codeit';
+    postsQueryKey = ['posts', username];
+    postsQueryFn = () => getPostsByUsername(username);
+  } else {
+    console.warn('Invalid feed request.');
+  }
+
+  const { data: postsData } = useQuery({
+    queryKey: postsQueryKey,
+    queryFn: postsQueryFn,
   });
 
-  const posts = data?.results ?? [];
+  const posts = postsData?.results ?? [];
 
   return (
     <div className={styles.postList}>
