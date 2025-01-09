@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  height: 50px;
+  width: 100%;
+}
+
+.form textarea {
+  flex: 1 1;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  outline: none;
+  margin: 0 10px;
+  border: 1px solid #ebebeb;
+}
+
+.form textarea::placeholder {
+  color: #878787;
+}
+
+.form div {
+  margin: auto;
+}
